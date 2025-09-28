@@ -262,3 +262,36 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Carrossel drag functionality - Simplified approach
+document.addEventListener('DOMContentLoaded', function() {
+    const carrosselTrack = document.querySelector('.carrossel-track');
+    
+    if (carrosselTrack) {
+        // Simply pause animation on hover/touch and resume when not interacting
+        carrosselTrack.addEventListener('mouseenter', () => {
+            carrosselTrack.style.animationPlayState = 'paused';
+        });
+        
+        carrosselTrack.addEventListener('mouseleave', () => {
+            carrosselTrack.style.animationPlayState = 'running';
+        });
+        
+        // Touch events - pause on touch start, resume on touch end
+        carrosselTrack.addEventListener('touchstart', () => {
+            carrosselTrack.style.animationPlayState = 'paused';
+        });
+        
+        carrosselTrack.addEventListener('touchend', () => {
+            // Resume after a short delay
+            setTimeout(() => {
+                carrosselTrack.style.animationPlayState = 'running';
+            }, 500);
+        });
+        
+        // Allow native scrolling on mobile
+        carrosselTrack.addEventListener('touchmove', (e) => {
+            // Let the browser handle the scrolling naturally
+        }, { passive: true });
+    }
+});
