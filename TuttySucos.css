@@ -1137,9 +1137,9 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 120px;
-    min-width: 200px;
-    padding: 1.5rem;
+    height: 180px;
+    min-width: 250px;
+    padding: 2.5rem;
     transition: transform 0.3s ease;
     flex-shrink: 0;
 }
@@ -1171,9 +1171,9 @@ html {
 /* Responsive adjustments */
 @media (max-width: 1024px) {
     .parceiro-logo {
-        min-width: 180px;
-        height: 100px;
-        padding: 1rem;
+        min-width: 220px;
+        height: 150px;
+        padding: 2rem;
     }
     
     .carrossel-track {
@@ -1183,9 +1183,9 @@ html {
 
 @media (max-width: 768px) {
     .parceiro-logo {
-        min-width: 150px;
-        height: 80px;
-        padding: 0.8rem;
+        min-width: 190px;
+        height: 130px;
+        padding: 1.8rem;
     }
     
     .carrossel-track {
@@ -1195,9 +1195,9 @@ html {
 
 @media (max-width: 480px) {
     .parceiro-logo {
-        min-width: 120px;
-        height: 60px;
-        padding: 0.5rem;
+        min-width: 160px;
+        height: 110px;
+        padding: 1.5rem;
     }
     
     .carrossel-track {

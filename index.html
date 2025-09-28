@@ -92,7 +92,7 @@
         }
 
         .btn-tutty {
-            background: #f5f5f5;
+            background: #ffe5c7;
             color: #333;
         }
 
@@ -124,6 +124,92 @@
             font-size: 0.9rem;
         }
 
+        /* Hotéis Parceiros Section */
+        .hoteis-parceiros {
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .hoteis-parceiros h2 {
+            color: #333;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .hoteis-parceiros p {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .carrossel-container {
+            width: 100%;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .carrossel-track {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            width: max-content;
+            animation: scroll-left 60s linear infinite;
+        }
+
+        .carrossel-track:hover {
+            animation-play-state: paused;
+        }
+
+        .parceiro-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 140px;
+            min-width: 200px;
+            padding: 2rem;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .parceiro-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .parceiro-logo:hover .logo-img {
+            transform: scale(1.1);
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .parceiro-logo {
+                min-width: 180px;
+                height: 120px;
+                padding: 1.5rem;
+            }
+
+            .carrossel-track {
+                gap: 2rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .buttons-container {
                 flex-direction: column;
@@ -133,6 +219,32 @@
             .btn {
                 width: 100%;
                 max-width: 250px;
+            }
+
+            .hoteis-parceiros h2 {
+                font-size: 1.5rem;
+            }
+
+            .parceiro-logo {
+                min-width: 160px;
+                height: 100px;
+                padding: 1.2rem;
+            }
+
+            .carrossel-track {
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .parceiro-logo {
+                min-width: 140px;
+                height: 85px;
+                padding: 1rem;
+            }
+
+            .carrossel-track {
+                gap: 1rem;
             }
         }
     </style>
@@ -144,7 +256,7 @@
         </div>
         
         <h1>ACS DISTRIBUIDORA</h1>
-        <p class="subtitle">Escolha uma de nossas marcas para continuar</p>
+        <p class="subtitle">Escolha uma de nossas representações para continuar</p>
         
         <div class="buttons-container">
             <a href="TuttySucos.html" class="btn btn-tutty">
@@ -154,6 +266,127 @@
             <a href="IgarapeCafe.html" class="btn btn-igarape">
                 <img src="Igarape/logo.png" alt="Igarapé Café Logo">
             </a>
+        </div>
+        
+        <!-- Hotéis Parceiros Section -->
+        <div class="hoteis-parceiros">
+            <p>Conheça alguns dos parceiros que confiam na qualidade dos nossos produtos</p>
+            
+            <div class="carrossel-container">
+                <div class="carrossel-track">
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/Grupo B.png" alt="Grupo BZ" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/ferradurahotel_resort_logomarca.png" alt="Resort Ferradura" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/Ferradura.png" alt="Ferradura" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/Hotel_Coronado.png" alt="Hotel Coronado" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/Aguas Claras.png" alt="Pousada Águas Claras" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/mERIDIANAS.webp" alt="Grupo Meridianas Hotéis" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/Gravatas pousada.png" alt="Pousada Gravaras" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/CafeMar.png" alt="Pousada Café e Mar" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/kastel.jpeg" alt="Grupo Kastel" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/grupovilarejo.jpg" alt="Grupo Villarejo Hotéis" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/macae-mercure.jpg" alt="Hotel Mercure Macaé" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/brisa tropical.png" alt="Hotel Brisa Tropical" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/brisa da costa.jfif" alt="Hotel Brisa da Costa" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/vhome-nova-logo-1-300x155.png" alt="Hotel V Houme" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/samba.png" alt="Grupo Samba Hotéis" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/ondas do forte.jfif" alt="Hotel Ondas do Forte" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/marlen.jfif" alt="Hotel Marlen" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/pousada maria.png" alt="Pousada Maria" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/albatroz.png" alt="Pousada Albatroz" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/ATLANTICO-LOGO.webp" alt="Hotel Atlântico" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/portopraia.png" alt="Grupo Porto Praia" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/canto da baleia.jfif" alt="Hotel Canto da Baleia" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/logo-solar-p6onqaowq7qcu6857cdbejh3anexj5ipm2u4r1ab5u.png" alt="Pousada Solar da Praia" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/st robert.jfif" alt="Hotel Fazenda St Robert" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/seleto.jfif" alt="Hotel Seleto" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/ribeirao.jfif" alt="Hotel Fazenda Ribeirão" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/caluje.png" alt="Hotel Fazenda Caluje" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/santissimo.jfif" alt="Hotel Fazenda Santíssimo MG" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/papai noel.jfif" alt="Hotel Papai Noel" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/Titanic-Logo2.png" alt="Hotel Titanic" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/suarez.png" alt="Pousada Suarez" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/finlandia.png" alt="Hotel Filandia" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/vila francesa.jfif" alt="Hotel Vila Francesa" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/santa fe.png" alt="Pousada Santa Fé" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/fazendinha.jfif" alt="Hotel Fazendinha" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/vila rica.png" alt="Hotel Vila Rica" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/cegil.png" alt="Hotel Cegil" class="logo-img">
+                    </div>
+                </div>
+            </div>
         </div>
         
         <div class="status">
