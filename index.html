@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JK Distribuidora</title>
+    <title>JK Distribuidora - Distribuição e Qualidade</title>
     
     <!-- Meta tags para compartilhamento -->
-    <meta property="og:title" content="JK Distribuidora">
-    <meta property="og:description" content="Página temporariamente inativa - Acesse nossas marcas Tutty Sucos e Igarapé Café">
+    <meta property="og:title" content="JK Distribuidora - Distribuição e Qualidade">
+    <meta property="og:description" content="Especialistas em distribuição de produtos premium para hotelaria e food service">
     <meta property="og:image" content="Logo JK.png">
     <meta property="og:url" content="">
     <meta property="og:type" content="website">
@@ -15,265 +15,348 @@
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="JK Distribuidora">
-    <meta name="twitter:description" content="Página temporariamente inativa - Acesse nossas representações Tutty Sucos e Igarapé Café">
+    <meta name="twitter:description" content="Especialistas em distribuição de produtos premium para hotelaria e food service">
     <meta name="twitter:image" content="Logo JK.png">
     
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="Logo JK.png">
     <link rel="icon" type="image/png" sizes="16x16" href="Logo JK.png">
     <link rel="apple-touch-icon" sizes="180x180" href="Logo JK.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #f8f9fa;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-        }
-
-        .container {
-            text-align: center;
-            max-width: 500px;
-            width: 100%;
-        }
-
-        .logo {
-            margin-bottom: 3rem;
-          
-        }
-
-        .logo img {
-            max-width: 120px;
-            height: auto;
-        }
-
-        h1 {
-            color: #333;
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .subtitle {
-            color: #666;
-            font-size: 1rem;
-            margin-bottom: 3rem;
-            line-height: 1.5;
-        }
-
-        .buttons-container {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-            border: none;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            width: 120px;
-            height: 120px;
-            border-radius: 12px;
-        }
-
-        .btn-tutty {
-            background: #ffe5c7;
-            color: #333;
-        }
-
-        .btn-tutty:hover {
-            background: #e9ecef;
-        }
-
-        .btn-igarape {
-            background: #8B4513;
-            color: white;
-        }
-
-        .btn-igarape:hover {
-            background: #A0522D;
-        }
-
-        .btn img {
-            max-width: 80px;
-            max-height: 80px;
-            width: auto;
-            height: auto;
-        }
-
-        .status {
-            margin-top: 2rem;
-            padding: 0.75rem;
-            background: #e9ecef;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        /* Hotéis Parceiros Section */
-        .hoteis-parceiros {
-            margin: 4rem 0;
-            text-align: center;
-        }
-
-        .hoteis-parceiros h2 {
-            color: #333;
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-        }
-
-        .hoteis-parceiros p {
-            color: #666;
-            font-size: 1rem;
-            margin-bottom: 2rem;
-            line-height: 1.5;
-        }
-
-        .carrossel-container {
-            width: 100%;
-            overflow: hidden;
-            margin-top: 2rem;
-        }
-
-        .carrossel-track {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            width: max-content;
-            animation: scroll-left 60s linear infinite;
-        }
-
-        .carrossel-track:hover {
-            animation-play-state: paused;
-        }
-
-        .parceiro-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 140px;
-            min-width: 200px;
-            padding: 2rem;
-            transition: transform 0.3s ease;
-            flex-shrink: 0;
-        }
-
-        .parceiro-logo:hover {
-            transform: scale(1.05);
-        }
-
-        .logo-img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            transition: transform 0.3s ease;
-        }
-
-        .parceiro-logo:hover .logo-img {
-            transform: scale(1.1);
-        }
-
-        @keyframes scroll-left {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .parceiro-logo {
-                min-width: 180px;
-                height: 120px;
-                padding: 1.5rem;
-            }
-
-            .carrossel-track {
-                gap: 2rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .buttons-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 250px;
-            }
-
-            .hoteis-parceiros h2 {
-                font-size: 1.5rem;
-            }
-
-            .parceiro-logo {
-                min-width: 160px;
-                height: 100px;
-                padding: 1.2rem;
-            }
-
-            .carrossel-track {
-                gap: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .parceiro-logo {
-                min-width: 140px;
-                height: 85px;
-                padding: 1rem;
-            }
-
-            .carrossel-track {
-                gap: 1rem;
-            }
-        }
-    </style>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <img src="Logo JK.png" alt="JK Distribuidora Logo">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">
+                    <img src="Logo JK.png" alt="JK Distribuidora" class="logo-img">
+                </a>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#sobre" class="nav-link">SOBRE</a></li>
+                <li><a href="#segmentos" class="nav-link">SEGMENTOS</a></li>
+                <li><a href="#diferenciais" class="nav-link">DIFERENCIAIS</a></li>
+                <li><a href="#parceiros" class="nav-link">PARCEIROS</a></li>
+                <li><a href="#contato" class="nav-link nav-cta">CONTATO</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
-        
-        <h1>JK DISTRIBUIDORA</h1>
-        <p class="subtitle">Escolha uma de nossas representações para continuar</p>
-        
-        <div class="buttons-container">
-            <a href="TuttySucos.html" class="btn btn-tutty">
-                <img src="imagem_2025-09-27_003453435-Photoroom.png" alt="Tutty Sucos Logo">
-            </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="animated-bg"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text animate-on-scroll">
+                <h1 class="hero-title">
+                    <span class="title-line">JK</span>
+                    <span class="title-line">DISTRIBUIDORA</span>
+                </h1>
+                <p class="hero-subtitle">Distribuição e Qualidade em Produtos Premium</p>
+                <p class="hero-description">
+                    Especialistas em soluções completas para hotelaria e food service, 
+                    representando as melhores marcas do mercado nacional
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contato" class="btn btn-primary">
+                        <span>Fale Conosco</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#sobre" class="btn btn-secondary">
+                        <span>Conheça Mais</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="sobre-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">QUEM SOMOS</span>
+                <h2 class="section-title">Uma Empresa de Distribuição<br>Com Tradição e Inovação</h2>
+                <p class="section-subtitle">Combinando experiência do mercado com tecnologia moderna</p>
+            </div>
             
-            <a href="IgarapeCafe.html" class="btn btn-igarape">
-                <img src="Igarape/logo.png" alt="Igarapé Café Logo">
-            </a>
+            <div class="sobre-content">
+                <div class="sobre-text animate-on-scroll">
+                    <div class="sobre-about">
+                        <h3>Nossa História</h3>
+                        <p>
+                            A JK Distribuidora nasceu com o compromisso de ser referência em distribuição 
+                            de produtos de alta qualidade. Com anos de experiência no mercado, construímos 
+                            uma sólida rede de parcerias com os principais estabelecimentos do país.
+                        </p>
+                        <p>
+                            Nossa missão é conectar as melhores marcas aos nossos clientes, oferecendo 
+                            soluções completas que agregam valor aos seus negócios.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="sobre-stats animate-on-scroll">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="stat-number" data-target="100">100+</div>
+                        <div class="stat-label">Parceiros Atendidos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <div class="stat-number" data-target="10">10+</div>
+                        <div class="stat-label">Anos de Experiência</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-number" data-target="2">2</div>
+                        <div class="stat-label">Linhas de Produtos</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-thumbs-up"></i>
+                        </div>
+                        <div class="stat-number" data-target="98">98%</div>
+                        <div class="stat-label">Satisfação do Cliente</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="valores-grid">
+                <div class="valor-card">
+                    <div class="valor-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Missão</h3>
+                    <p>Fornecer produtos de excelência com agilidade, garantindo a satisfação de nossos clientes</p>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Visão</h3>
+                    <p>Ser referência nacional em distribuição de produtos premium para o mercado hoteleiro</p>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Valores</h3>
+                    <p>Compromisso, qualidade, inovação e relacionamento duradouro com nossos parceiros</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Segmentos Section -->
+    <section id="segmentos" class="segmentos-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">NOSSOS SEGMENTOS</span>
+                <h2 class="section-title">Produtos Selecionados<br>para o Seu Negócio</h2>
+                <p class="section-subtitle">Representamos as melhores marcas do mercado</p>
+            </div>
+            
+            <div class="segmentos-grid">
+                <div class="segmento-card animate-on-scroll">
+                    <div class="segmento-icon">
+                        <img src="imagem_2025-09-27_003453435-Photoroom.png" alt="Tutty Sucos">
+                    </div>
+                    <h3>Tutty Sucos</h3>
+                    <p>Sucos naturais de frutas, produzidos com os mais altos padrões de qualidade</p>
+                    <div class="segmento-features">
+                        <span><i class="fas fa-check"></i> 100% Natural</span>
+                        <span><i class="fas fa-check"></i> Variedade de Sabores</span>
+                        <span><i class="fas fa-check"></i> Qualidade Premium</span>
+                    </div>
+                    <a href="TuttySucos.html" class="segmento-link">
+                        Saiba Mais <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="segmento-card animate-on-scroll">
+                    <div class="segmento-icon cafe-icon">
+                        <img src="Igarape/logo.png" alt="Café Igarapé">
+                    </div>
+                    <h3>Café Igarapé</h3>
+                    <p>Café especial selecionado, torrado com perfeição para o paladar exigente</p>
+                    <div class="segmento-features">
+                        <span><i class="fas fa-check"></i> Torra Perfeita</span>
+                        <span><i class="fas fa-check"></i> Aroma Intenso</span>
+                        <span><i class="fas fa-check"></i> Origem Selecionada</span>
+                    </div>
+                    <a href="IgarapeCafe.html" class="segmento-link">
+                        Saiba Mais <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais Section -->
+    <section id="diferenciais" class="diferenciais-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">POR QUE ESCOLHER A JK</span>
+                <h2 class="section-title">Diferenciais que<br>Fazem a Diferença</h2>
+            </div>
+            
+            <div class="diferenciais-grid">
+                <div class="diferencial-card animate-on-scroll">
+                    <div class="diferencial-number">01</div>
+                    <div class="diferencial-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Logística Eficiente</h3>
+                    <p>Entregas rápidas e pontuais, garantindo disponibilidade contínua dos produtos</p>
+                </div>
+                
+                <div class="diferencial-card animate-on-scroll">
+                    <div class="diferencial-number">02</div>
+                    <div class="diferencial-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Atendimento Personalizado</h3>
+                    <p>Equipe dedicada para oferecer suporte e soluções customizadas ao seu negócio</p>
+                </div>
+                
+                <div class="diferencial-card animate-on-scroll">
+                    <div class="diferencial-number">03</div>
+                    <div class="diferencial-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Qualidade Garantida</h3>
+                    <p>Rigoroso controle de qualidade em todos os produtos que distribuímos</p>
         </div>
         
-        <!-- Hotéis Parceiros Section -->
-        <div class="hoteis-parceiros">
-            <p>Conheça alguns dos parceiros que confiam na qualidade dos nossos produtos</p>
+                <div class="diferencial-card animate-on-scroll">
+                    <div class="diferencial-number">04</div>
+                    <div class="diferencial-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Parcerias Estratégicas</h3>
+                    <p>Relacionamento duradouro com os principais players do mercado hoteleiro</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosso Compromisso Section -->
+    <section class="foco-section">
+        <div class="container">
+            <div class="foco-content">
+                <div class="foco-text animate-on-scroll">
+                    <span class="section-label">NOSSO COMPROMISSO</span>
+                    <h2>Qualidade que<br>Transforma Negócios</h2>
+                    <p>
+                        Compreendemos que cada negócio é único e merece atenção especial. Por isso, 
+                        selecionamos cuidadosamente cada produto, garantindo excelência em cada 
+                        entrega e um suporte personalizado para o seu crescimento.
+                    </p>
+                    <p>
+                        Seja qual for o segmento, oferecemos soluções completas que agregam valor 
+                        e impulsionam os resultados dos nossos parceiros.
+                    </p>
+                    <a href="#contato" class="btn btn-primary">
+                        Fale Conosco <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+                <div class="foco-visual animate-on-scroll">
+                    <div class="foco-card">
+                        <i class="fas fa-certificate"></i>
+                        <h4>Qualidade Certificada</h4>
+                    </div>
+                    <div class="foco-card">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h4>Entrega Rápida</h4>
+                    </div>
+                    <div class="foco-card">
+                        <i class="fas fa-headset"></i>
+                        <h4>Suporte Dedicado</h4>
+                    </div>
+                    <div class="foco-card">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Parceria de Longo Prazo</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Representação de Marcas Section -->
+    <section class="representacao-section">
+    <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">NOSSO TRABALHO</span>
+                <h2 class="section-title">Representamos Marcas<br>que Fazem a Diferença</h2>
+                <p class="section-subtitle">Trabalhamos com produtos de qualidade para surpreender você</p>
+        </div>
+        
+            <div class="representacao-content">
+                <div class="representacao-text animate-on-scroll">
+                    <p>
+                        Somos representantes de marcas especiais, escolhidas a dedo para oferecer o melhor 
+                        para nossos clientes. Nosso trabalho é conectar você aos produtos certos, facilitando 
+                        seu acesso à qualidade e excelência.
+                    </p>
+                    <p>
+                        Para as marcas que representamos, oferecemos toda nossa rede de parceiros e experiência, 
+                        ajudando a levar seus produtos aos lugares certos. E para você, garantimos confiança, 
+                        praticidade e ótimos resultados.
+                    </p>
+                </div>
+
+                <div class="marcas-representadas animate-on-scroll">
+                    <h3>Marcas que Representamos</h3>
+                    <div class="marcas-logos">
+                        <div class="marca-logo-item">
+                            <img src="imagem_2025-09-27_003453435-Photoroom.png" alt="Tutty Sucos">
+                            <p>Tutty Sucos</p>
+                        </div>
+                        <div class="marca-logo-item marca-logo-item-cafe">
+                            <img src="Igarape/logo.png" alt="Café Igarapé">
+                            <p>Café Igarapé</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parceiros Section -->
+    <section id="parceiros" class="parceiros-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-label">CONFIANÇA</span>
+                <h2 class="section-title">Parceiros que Confiam<br>na Nossa Qualidade</h2>
+                <p class="section-subtitle">Grandes marcas do setor hoteleiro</p>
+        </div>
             
             <div class="carrossel-container">
                 <div class="carrossel-track">
+                    <!-- Duplicando os logos para criar loop infinito -->
                     <div class="parceiro-logo">
                         <img src="LogosHoteis/Grupo B.png" alt="Grupo BZ" class="logo-img">
                     </div>
@@ -385,14 +468,131 @@
                     <div class="parceiro-logo">
                         <img src="LogosHoteis/cegil.png" alt="Hotel Cegil" class="logo-img">
                     </div>
+                    <!-- Duplicação para loop infinito -->
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/Grupo B.png" alt="Grupo BZ" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/ferradurahotel_resort_logomarca.png" alt="Resort Ferradura" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/Ferradura.png" alt="Ferradura" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/Hotel_Coronado.png" alt="Hotel Coronado" class="logo-img">
+                    </div>
+                    <div class="parceiro-logo">
+                        <img src="LogosHoteis/Aguas Claras.png" alt="Pousada Águas Claras" class="logo-img">
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="contato-section">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2>ENTRE EM CONTATO</h2>
+            </div>
+            
+            <div class="contato-content">
+                <div class="contato-info animate-on-scroll">
+                    <div class="contato-item">
+                        <h3>TELEFONE</h3>
+                        <p>(24) 98880-5041 - Alcir Canuto (Representante)</p>
+                        <p>(24) 98866-1692 - Kleber Giroto (Diretor Comercial)</p>
+                        <p>(21) 98585-0197 - Davi Portela (Representante)</p>
+                    </div>
+                    <div class="contato-item">
+                        <h3>EMAIL</h3>
+                        <p>alcirsouza5094@gmail.com - Alcir (Representante)</p>
+                        <p>klebergcs@gmail.com - Kleber (Diretor Comercial)</p>
+                    </div>
+                    <div class="contato-item">
+                        <h3>HORÁRIO DE FUNCIONAMENTO</h3>
+                        <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+                    </div>
+                </div>
+
+                <!-- Formulário de Contato -->
+                <div class="contato-form animate-on-scroll">
+                    <h3>ENVIE SUA MENSAGEM</h3>
+                    <form id="whatsapp-form">
+                        <div class="form-group">
+                            <input type="text" id="nome" placeholder="Seu nome completo" required>
+                        </div>
+                        <div class="form-group">
+                            <select title="Tipo de mensagem" id="mensagem-tipo" required>
+                                <option value="">Escolha o tipo de mensagem</option>
+                                <option value="cotacao">Olá, gostaria de solicitar uma cotação</option>
+                                <option value="duvidas">Olá, tenho dúvidas sobre os produtos</option>
+                                <option value="parceria">Olá, gostaria de falar sobre parceria comercial</option>
+                                <option value="pedido">Olá, gostaria de fazer um pedido</option>
+                                <option value="informacoes">Olá, gostaria de mais informações sobre os produtos</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">ENVIAR VIA WHATSAPP</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="Logo JK.png" alt="JK Distribuidora">
+                    </div>
+                    <p>Distribuição e qualidade em produtos premium para hotelaria e food service.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://wa.me/5524988805041" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#segmentos">Segmentos</a></li>
+                        <li><a href="#diferenciais">Diferenciais</a></li>
+                        <li><a href="#parceiros">Parceiros</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="TuttySucos.html">Tutty Sucos</a></li>
+                        <li><a href="IgarapeCafe.html">Café Igarapé</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (24) 98880-5041 - Alcir</li>
+                        <li><i class="fas fa-phone"></i> (24) 98866-1692 - Kleber</li>
+                        <li><i class="fas fa-phone"></i> (21) 98585-0197 - Davi</li>
+                        <li><i class="fas fa-envelope"></i> alcirsouza5094@gmail.com</li>
+                        <li><i class="fas fa-envelope"></i> klebergcs@gmail.com</li>
+                    </ul>
+            </div>
+        </div>
         
-        <div class="status">
-            <i class="fas fa-info-circle"></i>
-            Site principal em manutenção - Acesse as representações acima
+            <div class="footer-bottom">
+                <p>&copy; 2025 JK Distribuidora. Todos os direitos reservados.</p>
         </div>
     </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="index.js"></script>
 </body>
 </html>
