@@ -423,6 +423,10 @@ body {
 }
 
 @media (max-width: 968px) {
+    .hero-content {
+        padding: 0 20px;
+    }
+    
     .hero-title {
         font-size: 3rem;
     }
@@ -855,7 +859,7 @@ body {
    FOCO SECTION
    ======================================== */
 .foco-section {
-    padding: 120px 0;
+    padding: 100px 0;
     background: linear-gradient(135deg, #001F3F 0%, #0056B3 100%);
     color: white;
 }
@@ -863,7 +867,7 @@ body {
 .foco-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    gap: 4rem;
     align-items: center;
 }
 
@@ -894,37 +898,77 @@ body {
     margin-bottom: 1.5rem;
 }
 
+.foco-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    margin-top: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.foco-link::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00A8FF 0%, #00D4FF 100%);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.foco-link:hover::after {
+    width: 100%;
+}
+
+.foco-link i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.foco-link:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.foco-link:hover i {
+    transform: translateX(6px);
+}
+
 .foco-visual {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 .foco-card {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 2.5rem 2rem;
-    border-radius: 25px;
+    background: transparent;
+    border: none;
+    padding: 1.5rem 1rem;
     text-align: center;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
 }
 
 .foco-card:hover {
-    transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    opacity: 0.8;
 }
 
 .foco-card i {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
     color: #00A8FF;
 }
 
 .foco-card h4 {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 @media (max-width: 968px) {
@@ -1019,6 +1063,63 @@ body {
     border-radius: 50%;
 }
 
+.representacao-cta {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.representacao-cta p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.representacao-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #000000;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.representacao-link::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #000000 0%, #333333 100%);
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.representacao-link:hover::after {
+    width: 100%;
+}
+
+.representacao-link i {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.representacao-link:hover {
+    color: #333333;
+}
+
+.representacao-link:hover i {
+    transform: translateX(4px);
+}
+
 @media (max-width: 640px) {
     .marcas-logos {
         flex-direction: column;
@@ -1027,6 +1128,15 @@ body {
     
     .marcas-representadas {
         padding: 2rem 1.5rem;
+    }
+    
+    .representacao-cta {
+        margin-top: 2rem;
+        padding-top: 2rem;
+    }
+    
+    .representacao-cta p {
+        font-size: 1rem;
     }
 }
 
@@ -1446,5 +1556,62 @@ body {
    ======================================== */
 body.loading {
     overflow: hidden;
+}
+
+/* ========================================
+   CARRO 3D ANIMADO
+   ======================================== */
+.title-with-cart {
+    display: inline-block;
+    position: relative;
+    padding-right: 500px;
+}
+
+.carro-container {
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 450px;
+    height: 270px;
+    pointer-events: none;
+}
+
+.carro-container canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Responsividade */
+@media (max-width: 968px) {
+    .title-with-cart {
+        padding-right: 350px;
+    }
+    
+    .carro-container {
+        width: 320px;
+        height: 192px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-content {
+        padding: 0 15px;
+    }
+    
+    .hero-title {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .title-with-cart {
+        padding-right: 180px;
+    }
+    
+    .carro-container {
+        width: 200px;
+        height: 120px;
+    }
 }
 

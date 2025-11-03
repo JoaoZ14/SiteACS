@@ -64,7 +64,12 @@
             <div class="hero-text animate-on-scroll">
                 <h1 class="hero-title">
                     <span class="title-line">JK</span>
-                    <span class="title-line">DISTRIBUIDORA</span>
+                    <span class="title-line title-with-cart">
+                        DISTRIBUIDORA
+                        <div class="carro-container">
+                            <canvas id="modelo3d-canvas"></canvas>
+                        </div>
+                    </span>
                 </h1>
                 <p class="hero-subtitle">Distribuição e Qualidade em Produtos Premium</p>
                 <p class="hero-description">
@@ -279,9 +284,9 @@
                         Seja qual for o segmento, oferecemos soluções completas que agregam valor 
                         e impulsionam os resultados dos nossos parceiros.
                     </p>
-                    <a href="#contato" class="btn btn-primary">
+                    <a href="#contato" class="foco-link">
                         Fale Conosco <i class="fas fa-arrow-right"></i>
-            </a>
+                    </a>
         </div>
                 <div class="foco-visual animate-on-scroll">
                     <div class="foco-card">
@@ -339,6 +344,16 @@
                             <img src="Igarape/logo.png" alt="Café Igarapé">
                             <p>Café Igarapé</p>
                         </div>
+                    </div>
+                    <div class="representacao-cta">
+                        <p>
+                            Se você tem interesse em ter sua marca representada por uma distribuidora experiente 
+                            e com uma sólida rede de parceiros, entre em contato conosco. Oferecemos toda nossa 
+                            expertise e network para levar seus produtos aos melhores estabelecimentos do mercado.
+                        </p>
+                        <a href="#contato" class="representacao-link">
+                            Fale Conosco <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -502,7 +517,6 @@
                         <h3>TELEFONE</h3>
                         <p>(24) 98880-5041 - Alcir Canuto (Representante)</p>
                         <p>(24) 98866-1692 - Kleber Giroto (Diretor Comercial)</p>
-                        <p>(21) 98585-0197 - Davi Portela (Representante)</p>
                     </div>
                     <div class="contato-item">
                         <h3>EMAIL</h3>
@@ -579,7 +593,6 @@
                     <ul>
                         <li><i class="fas fa-phone"></i> (24) 98880-5041 - Alcir</li>
                         <li><i class="fas fa-phone"></i> (24) 98866-1692 - Kleber</li>
-                        <li><i class="fas fa-phone"></i> (21) 98585-0197 - Davi</li>
                         <li><i class="fas fa-envelope"></i> alcirsouza5094@gmail.com</li>
                         <li><i class="fas fa-envelope"></i> klebergcs@gmail.com</li>
                     </ul>
@@ -593,6 +606,15 @@
     </footer>
 
     <!-- Scripts -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
     <script src="index.js"></script>
+    <script src="modelo3d.js" type="module"></script>
 </body>
 </html>
