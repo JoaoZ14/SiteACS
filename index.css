@@ -91,6 +91,10 @@ body {
     position: relative;
 }
 
+.nav-link {
+    color: #1a1a1a;
+}
+
 .nav-link::after {
     content: '';
     position: absolute;
@@ -98,7 +102,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #0056B3 0%, #00A8FF 100%);
+    background: linear-gradient(90deg, #32703d 0%, #6ad47d 100%);
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -109,11 +113,11 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-    color: #0056B3;
+    color: #32703d;
 }
 
 .nav-cta {
-    background: linear-gradient(135deg, #0056B3 0%, #00A8FF 100%);
+    background: linear-gradient(135deg, #f27f04 0%, #ff9a3c 100%);
     color: white !important;
     padding: 12px 24px;
     border-radius: 50px;
@@ -126,7 +130,7 @@ body {
 
 .nav-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 86, 179, 0.3);
+    box-shadow: 0 10px 30px rgba(242, 127, 4, 0.4);
 }
 
 .nav-toggle {
@@ -238,7 +242,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 31, 63, 0.75) 0%, rgba(0, 86, 179, 0.65) 50%, rgba(0, 168, 255, 0.55) 100%);
+    background: linear-gradient(135deg, rgba(50, 112, 61, 0.75) 0%, rgba(106, 212, 125, 0.65) 50%, rgba(242, 127, 4, 0.55) 100%);
     z-index: 1;
 }
 
@@ -249,8 +253,8 @@ body {
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(circle at 20% 80%, rgba(0, 168, 255, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(0, 86, 179, 0.15) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(106, 212, 125, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(242, 127, 4, 0.15) 0%, transparent 50%);
     animation: pulse 10s ease-in-out infinite;
     z-index: 2;
 }
@@ -287,6 +291,7 @@ body {
     line-height: 1.1;
     margin-bottom: 1.5rem;
     animation: fadeInUp 1s ease-out;
+    color: #ffffff;
 }
 
 .title-line {
@@ -339,9 +344,9 @@ body {
 }
 
 .btn-primary {
-    background: white;
-    color: #001F3F;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #f27f04 0%, #ff9a3c 100%);
+    color: white;
+    box-shadow: 0 10px 30px rgba(242, 127, 4, 0.3);
 }
 
 .btn-primary:hover {
@@ -361,7 +366,7 @@ body {
 
 .btn-secondary:hover {
     background: white;
-    color: #001F3F;
+    color: #32703d;
     transform: translateY(-3px);
 }
 
@@ -453,7 +458,7 @@ body {
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 3px;
-    color: #0056B3;
+    color: #32703d;
     margin-bottom: 1rem;
     text-transform: uppercase;
 }
@@ -464,7 +469,7 @@ body {
     letter-spacing: -1px;
     line-height: 1.2;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #001F3F 0%, #0056B3 100%);
+    background: linear-gradient(135deg, #32703d 0%, #6ad47d 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -503,7 +508,7 @@ body {
 .sobre-about h3 {
     font-size: 2rem;
     font-weight: 700;
-    color: #001F3F;
+    color: #32703d;
     margin-bottom: 1.5rem;
 }
 
@@ -524,21 +529,21 @@ body {
 .stat-card {
     text-align: center;
     padding: 2.5rem 2rem;
-    background: linear-gradient(135deg, #E3F2FD 0%, rgba(0, 168, 255, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(106, 212, 125, 0.1) 0%, rgba(50, 112, 61, 0.05) 100%);
     border-radius: 20px;
     transition: all 0.4s ease;
     border: 2px solid transparent;
 }
 
 .stat-card:hover {
-    box-shadow: 0 20px 60px rgba(0, 168, 255, 0.2);
+    box-shadow: 0 20px 60px rgba(50, 112, 61, 0.2);
 }
 
 .stat-icon {
     width: 70px;
     height: 70px;
     margin: 0 auto 1.5rem;
-    background: linear-gradient(135deg, #0056B3 0%, #00A8FF 100%);
+    background: linear-gradient(135deg, #32703d 0%, #6ad47d 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -552,7 +557,7 @@ body {
     font-weight: 900;
     color: #000000;
     margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, #001F3F 0%, #0056B3 100%);
+    background: linear-gradient(135deg, #32703d 0%, #6ad47d 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -590,7 +595,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 86, 179, 0.02) 0%, rgba(0, 168, 255, 0.02) 100%);
+    background: linear-gradient(135deg, rgba(50, 112, 61, 0.02) 0%, rgba(106, 212, 125, 0.02) 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
 }
@@ -607,7 +612,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 3.5rem;
-    background: linear-gradient(135deg, #0056B3 0%, #00A8FF 100%);
+    background: linear-gradient(135deg, #32703d 0%, #6ad47d 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -618,13 +623,13 @@ body {
 
 .valor-card:hover .valor-icon {
     transform: scale(1.15);
-    filter: drop-shadow(0 5px 15px rgba(0, 86, 179, 0.3));
+    filter: drop-shadow(0 5px 15px rgba(50, 112, 61, 0.3));
 }
 
 .valor-card h3 {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #001F3F;
+    color: #32703d;
     margin-bottom: 1rem;
     position: relative;
     z-index: 1;
@@ -667,8 +672,8 @@ body {
 
 .segmento-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 8px 40px rgba(0, 86, 179, 0.08);
-    border-color: rgba(0, 86, 179, 0.2);
+    box-shadow: 0 8px 40px rgba(50, 112, 61, 0.15);
+    border-color: rgba(50, 112, 61, 0.3);
 }
 
 .segmento-icon {
@@ -689,7 +694,7 @@ body {
 
 .segmento-icon i {
     font-size: 3.5rem;
-    background: linear-gradient(135deg, #0056B3 0%, #00A8FF 100%);
+    background: linear-gradient(135deg, #32703d 0%, #6ad47d 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -704,7 +709,7 @@ body {
 .segmento-card h3 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #001F3F;
+    color: #32703d;
     margin-bottom: 0.75rem;
     text-align: center;
 }
@@ -733,7 +738,7 @@ body {
 }
 
 .segmento-features i {
-    color: #00A8FF;
+    color: #6ad47d;
     font-size: 0.9rem;
 }
 
@@ -742,7 +747,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    color: #0056B3;
+    color: #32703d;
     font-weight: 500;
     text-decoration: none;
     transition: all 0.2s ease;
@@ -751,7 +756,7 @@ body {
 }
 
 .segmento-link:hover {
-    color: #00A8FF;
+    color: #f27f04;
     gap: 12px;
 }
 
@@ -780,7 +785,7 @@ body {
 .diferencial-card {
     position: relative;
     padding: 3rem 2rem;
-    background: linear-gradient(135deg, #E3F2FD 0%, rgba(0, 168, 255, 0.05) 100%);
+    background: linear-gradient(135deg, rgba(106, 212, 125, 0.1) 0%, rgba(50, 112, 61, 0.05) 100%);
     border-radius: 25px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
@@ -793,7 +798,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #0056B3 0%, #00A8FF 100%);
+    background: linear-gradient(135deg, #32703d 0%, #6ad47d 100%);
     opacity: 0;
     transition: opacity 0.4s ease;
 }
@@ -804,7 +809,7 @@ body {
 
 .diferencial-card:hover {
     transform: translateY(-15px);
-    box-shadow: 0 25px 60px rgba(0, 168, 255, 0.3);
+    box-shadow: 0 25px 60px rgba(50, 112, 61, 0.3);
 }
 
 .diferencial-card:hover .diferencial-number,
@@ -821,7 +826,7 @@ body {
     right: 20px;
     font-size: 4rem;
     font-weight: 900;
-    color: rgba(0, 86, 179, 0.1);
+    color: rgba(50, 112, 61, 0.1);
     transition: all 0.4s ease;
 }
 
@@ -833,7 +838,7 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 2.5rem;
-    color: #0056B3;
+    color: #32703d;
     position: relative;
     transition: all 0.4s ease;
 }
@@ -841,7 +846,7 @@ body {
 .diferencial-card h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #001F3F;
+    color: #32703d;
     margin-bottom: 1rem;
     position: relative;
     transition: all 0.4s ease;
@@ -860,7 +865,7 @@ body {
    ======================================== */
 .foco-section {
     padding: 100px 0;
-    background: linear-gradient(135deg, #001F3F 0%, #0056B3 100%);
+    background: linear-gradient(135deg, #32703d 0%, #6ad47d 100%);
     color: white;
 }
 
@@ -876,7 +881,7 @@ body {
 }
 
 .foco-text .section-label {
-    color: #00A8FF;
+    color: #f27f04;
 }
 
 .foco-text .section-title {
@@ -919,7 +924,7 @@ body {
     left: 0;
     width: 0;
     height: 3px;
-    background: linear-gradient(90deg, #00A8FF 0%, #00D4FF 100%);
+    background: linear-gradient(90deg, #f27f04 0%, #ff9a3c 100%);
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -962,7 +967,7 @@ body {
 .foco-card i {
     font-size: 2.5rem;
     margin-bottom: 0.75rem;
-    color: #00A8FF;
+    color: #f27f04;
 }
 
 .foco-card h4 {
@@ -1015,7 +1020,7 @@ body {
 .marcas-representadas h3 {
     font-size: 1.75rem;
     font-weight: 700;
-    color: #001F3F;
+    color: #32703d;
     margin-bottom: 2.5rem;
 }
 
@@ -1054,7 +1059,7 @@ body {
 .marca-logo-item p {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #001F3F;
+    color: #32703d;
 }
 
 .marca-logo-item-cafe img {
@@ -1247,7 +1252,7 @@ body {
     left: 0;
     width: 30px;
     height: 2px;
-    background: linear-gradient(135deg, #0056B3 0%, #00A8FF 100%);
+    background: linear-gradient(135deg, #32703d 0%, #6ad47d 100%);
 }
 
 .contato-item h3::before {
@@ -1274,7 +1279,7 @@ body {
 }
 
 .contato-item a:hover {
-    color: #0056B3;
+    color: #32703d;
 }
 
 .contato-form {
@@ -1299,7 +1304,7 @@ body {
     left: 0;
     width: 30px;
     height: 2px;
-    background: linear-gradient(135deg, #0056B3 0%, #00A8FF 100%);
+    background: linear-gradient(135deg, #32703d 0%, #6ad47d 100%);
 }
 
 .contato-form h3::before {
@@ -1332,7 +1337,7 @@ body {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #0056B3;
+    border-color: #32703d;
 }
 
 .form-group textarea {
@@ -1344,7 +1349,7 @@ body {
     display: inline-block;
     width: 100%;
     padding: 0.8rem 2rem;
-    background: linear-gradient(135deg, #0056B3 0%, #00A8FF 100%);
+    background: linear-gradient(135deg, #f27f04 0%, #ff9a3c 100%);
     color: #ffffff;
     text-decoration: none;
     border: none;
@@ -1358,7 +1363,7 @@ body {
 }
 
 .contato-form .btn:hover {
-    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.4);
+    box-shadow: 0 5px 15px rgba(242, 127, 4, 0.4);
 }
 
 .contato-section .section-header {
@@ -1395,8 +1400,8 @@ body {
    FOOTER
    ======================================== */
 .footer {
-    background: #001a33;
-    color: white;
+    background: #f0f3f1;
+    color: #1a1a1a;
     padding: 60px 0 30px;
 }
 
@@ -1411,7 +1416,7 @@ body {
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    color: #00A8FF;
+    color: #f27f04;
 }
 
 .footer-logo img {
@@ -1422,7 +1427,7 @@ body {
 .footer-section p {
     font-size: 1rem;
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.8);
+    color: #555;
     margin-bottom: 1.5rem;
 }
 
@@ -1432,10 +1437,11 @@ body {
 
 .footer-section ul li {
     margin-bottom: 0.75rem;
+    color: #666;
 }
 
 .footer-section ul li a {
-    color: rgba(255, 255, 255, 0.8);
+    color: #666;
     text-decoration: none;
     transition: all 0.3s ease;
     display: inline-flex;
@@ -1444,7 +1450,7 @@ body {
 }
 
 .footer-section ul li a:hover {
-    color: #00A8FF;
+    color: #32703d;
     transform: translateX(5px);
 }
 
@@ -1456,29 +1462,30 @@ body {
 .social-links a {
     width: 45px;
     height: 45px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(50, 112, 61, 0.1);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #32703d;
     font-size: 1.2rem;
     transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-    background: #00A8FF;
+    background: #f27f04;
+    color: white;
     transform: translateY(-5px);
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .footer-bottom p {
-    color: rgba(255, 255, 255, 0.6);
+    color: #888;
     font-size: 0.9rem;
 }
 
