@@ -24,7 +24,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="logoJK/j (4).png">
     
     <!-- Fonts and Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Styles -->
@@ -56,47 +56,40 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-background">
-            <div class="hero-gradient"></div>
-            <div class="animated-bg"></div>
-        </div>
+        <div class="hero-background" aria-hidden="true"></div>
         <div class="hero-content">
-            <div class="hero-text animate-on-scroll">
-                <h1 class="hero-title">
-                    <span class="title-line">JK</span>
-                    <span class="title-line title-with-cart">
-                        DISTRIBUIDORA
-                        <div class="carro-container">
-                            <canvas id="modelo3d-canvas"></canvas>
-                        </div>
-                    </span>
-                </h1>
-                <p class="hero-subtitle">Distribuição e Qualidade em Produtos Premium</p>
-                <p class="hero-description">
-                    Especialistas em soluções completas para hotelaria e food service, 
-                    representando as melhores marcas do mercado nacional
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contato" class="btn btn-primary">
-                        <span>Fale Conosco</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <a href="#sobre" class="btn btn-secondary">
-                        <span>Conheça Mais</span>
-                    </a>
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="title-line">JK</span>
+                        <span class="title-line">Distribuidora</span>
+                    </h1>
+                    <p class="hero-subtitle">Distribuição e Qualidade em Produtos Premium</p>
+                    <p class="hero-description">
+                        Especialistas em soluções completas para hotelaria e food service,
+                        representando as melhores marcas do mercado nacional.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contato" class="btn btn-primary">
+                            <span>Fale Conosco</span>
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <a href="#sobre" class="btn btn-secondary">
+                            <span>Conheça Mais</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual" aria-hidden="true">
+                    <canvas id="modelo3d-canvas"></canvas>
                 </div>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
         </div>
     </section>
 
     <!-- Sobre Section -->
     <section id="sobre" class="sobre-section">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-label">QUEM SOMOS</span>
+            <div class="section-header">
                 <h2 class="section-title">Uma Empresa de Distribuição<br>Com Tradição e Inovação</h2>
                 <p class="section-subtitle">Combinando experiência do mercado com tecnologia moderna</p>
             </div>
@@ -178,8 +171,7 @@
     <!-- Segmentos Section -->
     <section id="segmentos" class="segmentos-section">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-label">NOSSOS SEGMENTOS</span>
+            <div class="section-header">
                 <h2 class="section-title">Produtos Selecionados<br>para o Seu Negócio</h2>
                 <p class="section-subtitle">Representamos as melhores marcas do mercado</p>
             </div>
@@ -223,14 +215,12 @@
     <!-- Diferenciais Section -->
     <section id="diferenciais" class="diferenciais-section">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-label">POR QUE ESCOLHER A JK</span>
+            <div class="section-header">
                 <h2 class="section-title">Diferenciais que<br>Fazem a Diferença</h2>
             </div>
             
             <div class="diferenciais-grid">
-                <div class="diferencial-card animate-on-scroll">
-                    <div class="diferencial-number">01</div>
+                <div class="diferencial-card">
                     <div class="diferencial-icon">
                         <i class="fas fa-shipping-fast"></i>
                     </div>
@@ -238,8 +228,7 @@
                     <p>Entregas rápidas e pontuais, garantindo disponibilidade contínua dos produtos</p>
                 </div>
                 
-                <div class="diferencial-card animate-on-scroll">
-                    <div class="diferencial-number">02</div>
+                <div class="diferencial-card">
                     <div class="diferencial-icon">
                         <i class="fas fa-headset"></i>
                     </div>
@@ -247,8 +236,7 @@
                     <p>Equipe dedicada para oferecer suporte e soluções customizadas ao seu negócio</p>
                 </div>
                 
-                <div class="diferencial-card animate-on-scroll">
-                    <div class="diferencial-number">03</div>
+                <div class="diferencial-card">
                     <div class="diferencial-icon">
                         <i class="fas fa-award"></i>
                     </div>
@@ -256,8 +244,7 @@
                     <p>Rigoroso controle de qualidade em todos os produtos que distribuímos</p>
         </div>
         
-                <div class="diferencial-card animate-on-scroll">
-                    <div class="diferencial-number">04</div>
+                <div class="diferencial-card">
                     <div class="diferencial-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
@@ -272,9 +259,8 @@
     <section class="foco-section">
         <div class="container">
             <div class="foco-content">
-                <div class="foco-text animate-on-scroll">
-                    <span class="section-label">NOSSO COMPROMISSO</span>
-                    <h2>Qualidade que<br>Transforma Negócios</h2>
+                <div class="foco-text">
+                    <h2 class="foco-title">Qualidade que<br>Transforma Negócios</h2>
                     <p>
                         Compreendemos que cada negócio é único e merece atenção especial. Por isso, 
                         selecionamos cuidadosamente cada produto, garantindo excelência em cada 
@@ -313,8 +299,7 @@
     <!-- Representação de Marcas Section -->
     <section class="representacao-section">
     <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-label">NOSSO TRABALHO</span>
+            <div class="section-header">
                 <h2 class="section-title">Representamos Marcas<br>que Fazem a Diferença</h2>
                 <p class="section-subtitle">Trabalhamos com produtos de qualidade para surpreender você</p>
         </div>
@@ -363,8 +348,7 @@
     <!-- Parceiros Section -->
     <section id="parceiros" class="parceiros-section">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <span class="section-label">CONFIANÇA</span>
+            <div class="section-header">
                 <h2 class="section-title">Parceiros que Confiam<br>na Nossa Qualidade</h2>
                 <p class="section-subtitle">Grandes marcas do setor hoteleiro</p>
         </div>
@@ -507,8 +491,8 @@
     <!-- Contato Section -->
     <section id="contato" class="contato-section">
         <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2>ENTRE EM CONTATO</h2>
+            <div class="section-header">
+                <h2 class="section-title">Entre em Contato</h2>
             </div>
             
             <div class="contato-content">
@@ -591,18 +575,18 @@
                 <div class="footer-section">
                     <h4>Contato</h4>
                     <ul>
-                        <li><i class="fas fa-phone"></i> (24) 98880-5041 - Alcir</li>
-                        <li><i class="fas fa-phone"></i> (24) 98866-1692 - Kleber</li>
-                        <li><i class="fas fa-envelope"></i> alcirsouza5094@gmail.com</li>
-                        <li><i class="fas fa-envelope"></i> klebergcs@gmail.com</li>
+                        <li><i class="fas fa-phone" aria-hidden="true"></i> (24) 98880-5041 - Alcir</li>
+                        <li><i class="fas fa-phone" aria-hidden="true"></i> (24) 98866-1692 - Kleber</li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> alcirsouza5094@gmail.com</li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> klebergcs@gmail.com</li>
                     </ul>
+                </div>
             </div>
-        </div>
-        
+
             <div class="footer-bottom">
                 <p>&copy; 2025 JK Distribuidora. Todos os direitos reservados.</p>
+            </div>
         </div>
-    </div>
     </footer>
 
     <!-- Scripts -->

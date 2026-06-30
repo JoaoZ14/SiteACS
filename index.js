@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (navbar) {
             if (currentScroll > 50) {
-                navbar.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.15)';
+                navbar.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.12)';
             } else {
-                navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.12)';
+                navbar.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.08)';
             }
         }
     });

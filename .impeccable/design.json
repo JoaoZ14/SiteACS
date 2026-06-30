@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-30T00:00:00.000Z",
+  "title": "Design System: JK Distribuidora",
+  "extensions": {
+    "colorMeta": {
+      "jk-green-deep": {
+        "role": "primary",
+        "displayName": "Verde Distribuidor",
+        "canonical": "oklch(45% 0.12 145)",
+        "tonalRamp": ["#1a3d20", "#245530", "#32703d", "#4a8f56", "#6ad47d", "#8ee0a0", "#b3ecc4", "#d4f5e0"]
+      },
+      "jk-orange": {
+        "role": "secondary",
+        "displayName": "Laranja Comercial",
+        "canonical": "oklch(65% 0.18 55)",
+        "tonalRamp": ["#7a3d00", "#a35402", "#f27f04", "#ff9a3c", "#ffb366", "#ffcc99", "#ffe0bf", "#fff0e0"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta",
+        "canonical": "oklch(15% 0 0)",
+        "tonalRamp": ["#000000", "#1a1a1a", "#333333", "#555555", "#777777", "#999999", "#bbbbbb", "#dddddd"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Superfície",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": ["#e8e8e8", "#f0f0f0", "#f5f5f5", "#f8fafc", "#fafafa", "#fcfcfc", "#fefefe", "#ffffff"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero institucional e títulos de maior impacto. Fraunces serif."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Parágrafos, descrições B2B. Source Sans 3 humanista."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Navegação uppercase e rótulos de formulário."
+      }
+    },
+    "shadows": [
+      {
+        "name": "hover-cta",
+        "value": "0 4px 16px rgba(242, 127, 4, 0.25)",
+        "purpose": "Única sombra permitida em hover de CTAs primários."
+      },
+      {
+        "name": "nav-subtle",
+        "value": "0 4px 24px rgba(0, 0, 0, 0.08)",
+        "purpose": "Sombra mínima opcional na barra de navegação fixa."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Transições de estado padrão (hover, focus)."
+      },
+      {
+        "name": "duration-fast",
+        "value": "200ms",
+        "purpose": "Feedback imediato em botões e links."
+      }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "968px" },
+      { "name": "xl", "value": "1400px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA principal — contato, ação comercial.",
+      "html": "<button class=\"ds-btn-primary\">FALE CONOSCO <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M12 5l7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 10px; background: #f27f04; color: #ffffff; padding: 16px 32px; border: none; border-radius: 50px; font-family: 'Source Sans 3', system-ui, sans-serif; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1); } .ds-btn-primary:hover { background: #ff9a3c; transform: translateY(-2px); box-shadow: 0 4px 16px rgba(242, 127, 4, 0.25); } .ds-btn-primary:focus-visible { outline: 2px solid #32703d; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ação secundária em hero com fundo escuro.",
+      "html": "<button class=\"ds-btn-secondary\">CONHEÇA NOSSAS MARCAS</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: #ffffff; padding: 16px 32px; border: 2px solid #ffffff; border-radius: 50px; font-family: 'Source Sans 3', system-ui, sans-serif; font-weight: 600; font-size: 1rem; cursor: pointer; transition: background 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); } .ds-btn-secondary:hover { background: #ffffff; color: #32703d; transform: translateY(-2px); } .ds-btn-secondary:focus-visible { outline: 2px solid #ffffff; outline-offset: 2px; }"
+    },
+    {
+      "name": "Nav CTA",
+      "kind": "nav",
+      "refersTo": "nav-cta",
+      "description": "Botão de contato na barra de navegação.",
+      "html": "<a href=\"#contato\" class=\"ds-nav-cta\">CONTATO</a>",
+      "css": ".ds-nav-cta { display: inline-flex; align-items: center; background: #f27f04; color: #ffffff; padding: 12px 24px; border-radius: 50px; font-family: 'Source Sans 3', system-ui, sans-serif; font-weight: 600; font-size: 0.875rem; letter-spacing: 0.05em; text-decoration: none; text-transform: uppercase; transition: background 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1); } .ds-nav-cta:hover { background: #ff9a3c; transform: translateY(-2px); } .ds-nav-cta:focus-visible { outline: 2px solid #32703d; outline-offset: 2px; }"
+    },
+    {
+      "name": "Segment Card",
+      "kind": "card",
+      "description": "Card institucional plano para segmentos atendidos.",
+      "html": "<div class=\"ds-segment-card\"><div class=\"ds-segment-icon\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#32703d\" stroke-width=\"2\"><path d=\"M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z\"/></svg></div><h3 class=\"ds-segment-title\">Hotelaria</h3><p class=\"ds-segment-desc\">Soluções completas para hotéis e resorts de todo o Brasil.</p></div>",
+      "css": ".ds-segment-card { background: #ffffff; border: 1px solid #e0e0e0; border-radius: 16px; padding: 32px; transition: background 0.2s cubic-bezier(0.4, 0, 0.2, 1); } .ds-segment-card:hover { background: #f8fafc; } .ds-segment-icon { margin-bottom: 16px; } .ds-segment-title { font-family: 'Fraunces', Georgia, serif; font-size: 1.25rem; font-weight: 600; color: #1a1a1a; margin: 0 0 8px; } .ds-segment-desc { font-family: 'Source Sans 3', system-ui, sans-serif; font-size: 1rem; line-height: 1.6; color: #555555; margin: 0; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "description": "Campo de formulário de contato.",
+      "html": "<input type=\"text\" class=\"ds-input\" placeholder=\"Seu nome\" />",
+      "css": ".ds-input { width: 100%; background: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 12px 16px; font-family: 'Source Sans 3', system-ui, sans-serif; font-size: 1rem; color: #1a1a1a; transition: border-color 0.2s cubic-bezier(0.4, 0, 0.2, 1); } .ds-input::placeholder { color: #555555; } .ds-input:focus { outline: none; border-color: #32703d; } .ds-input:focus-visible { outline: 2px solid #32703d; outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "O Parceiro Confiável",
+    "overview": "O sistema visual da JK Distribuidora comunica solidez B2B antes de espetáculo. A hierarquia é clara, o conteúdo comercial é fácil de encontrar e as marcas representadas compartilham uma família visual sem perder personalidade.",
+    "keyCharacteristics": [
+      "Verde institucional como âncora de confiança",
+      "Superfícies predominantemente planas",
+      "Tipografia serif + sans com contraste real",
+      "Laranja reservado para CTAs comerciais",
+      "Marcas filhas com acentos próprios dentro da estrutura JK"
+    ],
+    "rules": [
+      { "name": "The Accent Rarity Rule", "body": "O laranja comercial aparece em ≤15% de qualquer tela.", "section": "colors" },
+      { "name": "The Brand Lane Rule", "body": "Tutty e Igarapé usam seus acentos próprios apenas nas respectivas páginas.", "section": "colors" },
+      { "name": "The No-Inter Rule", "body": "Inter está proibida no ecossistema unificado.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Superfícies são planas em repouso. Glassmorphism está proibido na unificação.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do usar verde #32703d como cor institucional dominante no site JK",
+      "Do reservar laranja #f27f04 para CTAs e ações comerciais",
+      "Do manter contraste WCAG AA em todos os textos",
+      "Do respeitar prefers-reduced-motion",
+      "Do unificar tipografia com Fraunces + Source Sans 3"
+    ],
+    "donts": [
+      "Don't usar visual genérico de SaaS/startup: Inter, gradientes roxos/cyan, cards idênticos em grid",
+      "Don't parecer varejo barato ou promocional demais",
+      "Don't usar glassmorphism, animações chamativas sem propósito ou gradientes decorativos em todo lugar",
+      "Don't colocar eyebrow em caixa alta em cada seção ou numeração 01/02/03 sem sequência real",
+      "Don't misturar paletas Tutty e JK na mesma página institucional"
+    ]
+  }
+}
