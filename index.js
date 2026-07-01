@@ -1,25 +1,54 @@
 // ========================================
 // NAVBAR FUNCTIONALITY
 // ========================================
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+function throttleScroll(callback) {
+    let ticking = false;
+    return function onScroll() {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(function() {
+            callback();
+            ticking = false;
+        });
+    };
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
     const navbar = document.querySelector('.navbar');
+
+    function setNavMenuOpen(isOpen) {
+        if (!navMenu || !navToggle) return;
+
+        navMenu.classList.toggle('active', isOpen);
+        navToggle.classList.toggle('active', isOpen);
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        navToggle.setAttribute(
+            'aria-label',
+            isOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação'
+        );
+    }
+
+    function closeNavMenu() {
+        setNavMenuOpen(false);
+    }
     
     // Mobile menu toggle
     if (navToggle) {
         navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
+            const isOpen = !navMenu.classList.contains('active');
+            setNavMenuOpen(isOpen);
         });
     }
     
     // Close mobile menu on link click
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
+            closeNavMenu();
         });
     });
     
@@ -27,37 +56,28 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', function(event) {
         if (navToggle && navMenu) {
             if (navbar && !navbar.contains(event.target)) {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
+                closeNavMenu();
             }
         }
     });
-    
-    // Navbar scroll effect
-    
-    window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset;
-        
-        if (navbar) {
-            if (currentScroll > 50) {
-                navbar.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.12)';
-            } else {
-                navbar.style.boxShadow = '0 4px 24px rgba(0, 0, 0, 0.08)';
-            }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && navMenu && navMenu.classList.contains('active')) {
+            closeNavMenu();
+            navToggle.focus();
         }
     });
     
-    // Active nav link on scroll
     const sections = document.querySelectorAll('section[id]');
-    
+
     function makeNavLinkActive() {
-        let scrollY = window.pageYOffset;
-        
+        const scrollY = window.pageYOffset;
+
         sections.forEach(section => {
             const sectionHeight = section.offsetHeight;
             const sectionTop = section.offsetTop - 200;
             const sectionId = section.getAttribute('id');
-            
+
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
                 navLinks.forEach(link => {
                     link.classList.remove('active');
@@ -68,8 +88,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    window.addEventListener('scroll', makeNavLinkActive);
+
+    // Navbar scroll + active section (single rAF-throttled handler)
+    function updateOnScroll() {
+        if (navbar) {
+            navbar.classList.toggle('is-scrolled', window.pageYOffset > 50);
+        }
+        makeNavLinkActive();
+    }
+
+    window.addEventListener('scroll', throttleScroll(updateOnScroll), { passive: true });
+    updateOnScroll();
     
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -147,16 +176,20 @@ const statsObserver = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting && !entry.target.hasAttribute('data-animated')) {
             const stats = entry.target.querySelectorAll('.stat-number');
+
+            if (prefersReducedMotion.matches) {
+                entry.target.setAttribute('data-animated', 'true');
+                statsObserver.unobserve(entry.target);
+                return;
+            }
+
             stats.forEach(stat => {
                 const text = stat.textContent.trim();
                 const isPercent = text.includes('%');
-                const target = parseInt(text.replace(/\D/g, ''));
+                const target = parseInt(text.replace(/\D/g, ''), 10);
                 const suffix = isPercent ? '%' : (text.includes('+') ? '+' : '');
-                
-                // Clear initial value
+
                 stat.textContent = '';
-                
-                // Animate
                 animateCounter(stat, target, 2000, suffix);
             });
             entry.target.setAttribute('data-animated', 'true');
@@ -173,99 +206,46 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ========================================
-// HOVER EFFECTS FOR CARDS
-// ========================================
-document.addEventListener('DOMContentLoaded', function() {
-    const cards = document.querySelectorAll('.segmento-card, .diferencial-card, .stat-card');
-    
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function(e) {
-            // Add ripple effect
-            createRipple(e, this);
-        });
-    });
-});
-
-function createRipple(event, element) {
-    const ripple = document.createElement('span');
-    const rect = element.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    const x = event.clientX - rect.left - size / 2;
-    const y = event.clientY - rect.top - size / 2;
-    
-    ripple.style.width = ripple.style.height = size + 'px';
-    ripple.style.left = x + 'px';
-    ripple.style.top = y + 'px';
-    ripple.classList.add('ripple');
-    
-    const rippleContainer = element;
-    rippleContainer.appendChild(ripple);
-    
-    setTimeout(() => {
-        ripple.remove();
-    }, 600);
-}
-
-// Add CSS for ripple effect
-const rippleStyle = document.createElement('style');
-rippleStyle.textContent = `
-    .segmento-card,
-    .diferencial-card,
-    .stat-card {
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .ripple {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(0, 168, 255, 0.1);
-        transform: scale(0);
-        animation: ripple-animation 0.6s linear;
-        pointer-events: none;
-    }
-    
-    @keyframes ripple-animation {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(rippleStyle);
-
-// ========================================
-// PARALLAX EFFECT FOR HERO - DISABLED
-// ========================================
-// Parallax effect removed per user request
-
-// ========================================
 // CAROUSEL CONTROL
 // ========================================
 document.addEventListener('DOMContentLoaded', function() {
     const carrosselTrack = document.querySelector('.carrossel-track');
-    
-    if (carrosselTrack) {
-        // Pause animation on hover
-        carrosselTrack.addEventListener('mouseenter', () => {
-            carrosselTrack.style.animationPlayState = 'paused';
-        });
-        
-        carrosselTrack.addEventListener('mouseleave', () => {
-            carrosselTrack.style.animationPlayState = 'running';
-        });
-        
-        // Touch events for mobile
-        carrosselTrack.addEventListener('touchstart', () => {
-            carrosselTrack.style.animationPlayState = 'paused';
-        });
-        
-        carrosselTrack.addEventListener('touchend', () => {
-            setTimeout(() => {
-                carrosselTrack.style.animationPlayState = 'running';
-            }, 500);
+
+    if (!carrosselTrack || carrosselTrack.dataset.loopReady === 'true') return;
+
+    if (!prefersReducedMotion.matches) {
+        const logos = Array.from(carrosselTrack.children);
+        logos.forEach(function(logo) {
+            const clone = logo.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            clone.querySelectorAll('img').forEach(function(img) {
+                img.alt = '';
+                img.loading = 'lazy';
+                img.decoding = 'async';
+            });
+            carrosselTrack.appendChild(clone);
         });
     }
+
+    carrosselTrack.dataset.loopReady = 'true';
+
+    carrosselTrack.addEventListener('mouseenter', function() {
+        carrosselTrack.style.animationPlayState = 'paused';
+    });
+
+    carrosselTrack.addEventListener('mouseleave', function() {
+        carrosselTrack.style.animationPlayState = 'running';
+    });
+
+    carrosselTrack.addEventListener('touchstart', function() {
+        carrosselTrack.style.animationPlayState = 'paused';
+    }, { passive: true });
+
+    carrosselTrack.addEventListener('touchend', function() {
+        setTimeout(function() {
+            carrosselTrack.style.animationPlayState = 'running';
+        }, 500);
+    }, { passive: true });
 });
 
 // ========================================
@@ -289,14 +269,18 @@ window.addEventListener('load', function() {
 // ========================================
 // BUTTON CURSOR FOLLOW EFFECT
 // ========================================
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('mousemove', function(e) {
-        const rect = this.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        this.style.setProperty('--mouse-x', `${x}px`);
-        this.style.setProperty('--mouse-y', `${y}px`);
+document.addEventListener('DOMContentLoaded', function() {
+    if (prefersReducedMotion.matches) return;
+
+    document.querySelectorAll('.btn').forEach(button => {
+        button.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            this.style.setProperty('--mouse-x', `${x}px`);
+            this.style.setProperty('--mouse-y', `${y}px`);
+        });
     });
 });
 
@@ -316,29 +300,6 @@ if (!window.cancelAnimationFrame) {
 }
 
 // ========================================
-// PERFORMANCE OPTIMIZATION
-// ========================================
-// Throttle function for scroll events
-function throttle(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Apply throttling to scroll events
-const optimizedScroll = throttle(() => {
-    // Scroll-dependent functions here
-}, 16);
-
-window.addEventListener('scroll', optimizedScroll);
-
-// ========================================
 // INTERSECTION OBSERVER POLYFILL CHECK
 // ========================================
 if (!window.IntersectionObserver) {
@@ -349,91 +310,151 @@ if (!window.IntersectionObserver) {
 }
 
 // ========================================
-// CONSOLE BRANDING
-// ========================================
-console.log('%c JK Distribuidora ', 'background: #0056B3; color: white; padding: 10px 20px; font-size: 20px; font-weight: bold;');
-console.log('%c Desenvolvido com excelência ', 'background: #00A8FF; color: white; padding: 5px 10px; font-size: 14px;');
-
-// ========================================
 // ACCESSIBILITY ENHANCEMENTS
 // ========================================
-// Skip to main content link
-const skipLink = document.createElement('a');
-skipLink.href = '#sobre';
-skipLink.textContent = 'Pular para conteúdo principal';
-skipLink.className = 'skip-link';
-skipLink.style.cssText = `
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #0056B3;
-    color: white;
-    padding: 8px 16px;
-    text-decoration: none;
-    z-index: 10000;
-    transition: top 0.3s;
-`;
-skipLink.addEventListener('focus', () => {
-    skipLink.style.top = '0';
-});
-skipLink.addEventListener('blur', () => {
-    skipLink.style.top = '-40px';
-});
-document.body.insertBefore(skipLink, document.body.firstChild);
-
-// Keyboard navigation enhancement
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        // Close mobile menu on ESC
-        const navMenu = document.getElementById('nav-menu');
-        const navToggle = document.getElementById('nav-toggle');
-        if (navMenu && navMenu.classList.contains('active')) {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-        }
-    }
-});
+// Skip link e menu mobile: ver index.html e bloco NAVBAR acima.
 
 // ========================================
 // WHATSAPP FORM SUBMISSION
 // ========================================
+const WHATSAPP_CONTACTS = {
+    alcir: {
+        number: '5524988805041',
+        name: 'Alcir Canuto'
+    },
+    kleber: {
+        number: '5524988661692',
+        name: 'Kleber Giroto'
+    }
+};
+
 document.addEventListener('DOMContentLoaded', function() {
     const whatsappForm = document.getElementById('whatsapp-form');
-    if (whatsappForm) {
-        whatsappForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const nome = document.getElementById('nome').value.trim();
-            const mensagemTipo = document.getElementById('mensagem-tipo').value;
+    if (!whatsappForm) return;
 
-            // Simple validation
-            if (!nome || !mensagemTipo) {
-                alert('Por favor, preencha seu nome e escolha o tipo de mensagem.');
-                return;
-            }
+    const nomeInput = document.getElementById('nome');
+    const mensagemTipoSelect = document.getElementById('mensagem-tipo');
+    const submitButton = document.getElementById('whatsapp-submit');
+    const formStatus = document.getElementById('form-status');
+    const nomeGroup = document.getElementById('form-group-nome');
+    const mensagemTipoGroup = document.getElementById('form-group-mensagem-tipo');
+    const nomeError = document.getElementById('nome-error');
+    const mensagemTipoError = document.getElementById('mensagem-tipo-error');
 
-            // Get the selected message text
-            const mensagemSelecionada = document.getElementById('mensagem-tipo').selectedOptions[0].text;
-
-            // Create WhatsApp message
-            const whatsappMessage = `${nome}
-
-${mensagemSelecionada}`;
-
-            // Encode message for URL
-            const encodedMessage = encodeURIComponent(whatsappMessage);
-            const whatsappNumber = '5524988805041'; // (24)98880-5041
-            
-            // Create WhatsApp URL
-            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
-            
-            // Open WhatsApp
-            window.open(whatsappURL, '_blank');
-            
-            // Reset form
-            this.reset();
-        });
+    function clearFieldError(group, input, errorEl) {
+        group.classList.remove('is-invalid');
+        input.removeAttribute('aria-invalid');
+        errorEl.textContent = '';
     }
+
+    function setFieldError(group, input, errorEl, message) {
+        group.classList.add('is-invalid');
+        input.setAttribute('aria-invalid', 'true');
+        errorEl.textContent = message;
+    }
+
+    function clearFormStatus() {
+        if (!formStatus) return;
+        formStatus.textContent = '';
+        formStatus.className = 'form-status';
+    }
+
+    function showFormStatus(message, type) {
+        if (!formStatus) return;
+        formStatus.textContent = message;
+        formStatus.className = `form-status is-visible form-status--${type}`;
+    }
+
+    function validateNome() {
+        const nome = nomeInput.value.trim();
+
+        if (!nome) {
+            setFieldError(nomeGroup, nomeInput, nomeError, 'Informe seu nome completo para abrir o WhatsApp.');
+            return false;
+        }
+
+        if (nome.length < 2) {
+            setFieldError(nomeGroup, nomeInput, nomeError, 'O nome precisa ter pelo menos 2 caracteres.');
+            return false;
+        }
+
+        clearFieldError(nomeGroup, nomeInput, nomeError);
+        return true;
+    }
+
+    function validateMensagemTipo() {
+        const mensagemTipo = mensagemTipoSelect.value;
+
+        if (!mensagemTipo) {
+            setFieldError(
+                mensagemTipoGroup,
+                mensagemTipoSelect,
+                mensagemTipoError,
+                'Selecione o assunto para direcionarmos você ao contato certo.'
+            );
+            return false;
+        }
+
+        clearFieldError(mensagemTipoGroup, mensagemTipoSelect, mensagemTipoError);
+        return true;
+    }
+
+    nomeInput.addEventListener('input', validateNome);
+    mensagemTipoSelect.addEventListener('change', validateMensagemTipo);
+
+    whatsappForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        clearFormStatus();
+
+        const isNomeValid = validateNome();
+        const isMensagemTipoValid = validateMensagemTipo();
+
+        if (!isNomeValid || !isMensagemTipoValid) {
+            showFormStatus('Preencha os campos em destaque para continuar.', 'error');
+            if (!isNomeValid) {
+                nomeInput.focus();
+            } else {
+                mensagemTipoSelect.focus();
+            }
+            return;
+        }
+
+        const nome = nomeInput.value.trim();
+        const selectedOption = mensagemTipoSelect.selectedOptions[0];
+        const contactKey = selectedOption.dataset.contact || 'alcir';
+        const contact = WHATSAPP_CONTACTS[contactKey] || WHATSAPP_CONTACTS.alcir;
+        const mensagemSelecionada = selectedOption.dataset.message || selectedOption.text;
+        const whatsappMessage = `${nome}\n\n${mensagemSelecionada}`;
+        const encodedMessage = encodeURIComponent(whatsappMessage);
+        const whatsappURL = `https://wa.me/${contact.number}?text=${encodedMessage}`;
+
+        if (submitButton) {
+            submitButton.disabled = true;
+        }
+
+        const whatsappWindow = window.open(whatsappURL, '_blank', 'noopener,noreferrer');
+
+        if (!whatsappWindow) {
+            showFormStatus(
+                'Não foi possível abrir o WhatsApp. Verifique se o navegador bloqueou pop-ups ou acesse: ' + whatsappURL,
+                'error'
+            );
+            if (submitButton) {
+                submitButton.disabled = false;
+            }
+            return;
+        }
+
+        showFormStatus(`Abrindo WhatsApp com ${contact.name}. Se não abrir, confira a nova aba do navegador.`, 'success');
+        whatsappForm.reset();
+        clearFieldError(nomeGroup, nomeInput, nomeError);
+        clearFieldError(mensagemTipoGroup, mensagemTipoSelect, mensagemTipoError);
+
+        if (submitButton) {
+            setTimeout(function() {
+                submitButton.disabled = false;
+            }, 1500);
+        }
+    });
 });
 

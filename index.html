@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JK Distribuidora - Distribuição e Qualidade</title>
+    <title>JK Distribuidora — Distribuição B2B para Hotelaria e Food Service</title>
     
     <!-- Meta tags para compartilhamento -->
-    <meta property="og:title" content="JK Distribuidora - Distribuição e Qualidade">
-    <meta property="og:description" content="Especialistas em distribuição de produtos premium para hotelaria e food service">
+    <meta property="og:title" content="JK Distribuidora — Distribuição B2B para Hotelaria e Food Service">
+    <meta property="og:description" content="Cotações, pedidos e fornecimento de Tutty Sucos e Café Igarapé para hotéis e restaurantes no Rio de Janeiro e região.">
     <meta property="og:image" content="logoJK/j (4).png">
     <meta property="og:url" content="">
     <meta property="og:type" content="website">
@@ -15,7 +15,7 @@
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="JK Distribuidora">
-    <meta name="twitter:description" content="Especialistas em distribuição de produtos premium para hotelaria e food service">
+    <meta name="twitter:description" content="Cotações, pedidos e fornecimento de Tutty Sucos e Café Igarapé para hotéis e restaurantes no Rio de Janeiro e região.">
     <meta name="twitter:image" content="logoJK/j (4).png">
     
     <!-- Favicons -->
@@ -23,64 +23,70 @@
     <link rel="icon" type="image/png" sizes="16x16" href="logoJK/j (4).png">
     <link rel="apple-touch-icon" sizes="180x180" href="logoJK/j (4).png">
     
-    <!-- Fonts and Icons -->
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Styles -->
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Principal">
         <div class="nav-container">
             <div class="nav-logo">
                 <a href="#home">
-                    <img src="logoJK/j (4).png" alt="JK Distribuidora" class="logo-img">
+                    <img src="logoJK/j (4).png" alt="JK Distribuidora" class="logo-img" width="120" height="65" decoding="async">
                 </a>
             </div>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#sobre" class="nav-link">SOBRE</a></li>
-                <li><a href="#segmentos" class="nav-link">SEGMENTOS</a></li>
+                <li><a href="#marcas" class="nav-link">MARCAS</a></li>
                 <li><a href="#diferenciais" class="nav-link">DIFERENCIAIS</a></li>
                 <li><a href="#parceiros" class="nav-link">PARCEIROS</a></li>
                 <li><a href="#contato" class="nav-link nav-cta">CONTATO</a></li>
             </ul>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <button
+                type="button"
+                class="nav-toggle"
+                id="nav-toggle"
+                aria-controls="nav-menu"
+                aria-expanded="false"
+                aria-label="Abrir menu de navegação"
+            >
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+                <span class="bar" aria-hidden="true"></span>
+            </button>
         </div>
     </nav>
 
+    <main id="main-content">
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-background" aria-hidden="true"></div>
         <div class="hero-content">
-            <div class="hero-grid">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        <span class="title-line">JK</span>
-                        <span class="title-line">Distribuidora</span>
-                    </h1>
-                    <p class="hero-subtitle">Distribuição e Qualidade em Produtos Premium</p>
-                    <p class="hero-description">
-                        Especialistas em soluções completas para hotelaria e food service,
-                        representando as melhores marcas do mercado nacional.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#contato" class="btn btn-primary">
-                            <span>Fale Conosco</span>
-                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
-                        </a>
-                        <a href="#sobre" class="btn btn-secondary">
-                            <span>Conheça Mais</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-visual" aria-hidden="true">
-                    <canvas id="modelo3d-canvas"></canvas>
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line">JK</span>
+                    <span class="title-line">Distribuidora</span>
+                </h1>
+                <p class="hero-subtitle">Distribuidora B2B para hotelaria e food service</p>
+                <p class="hero-description">
+                    Cotações, pedidos e fornecimento recorrente de Tutty Sucos e Café Igarapé
+                    no Rio de Janeiro e região, com logística ágil e equipe comercial dedicada.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contato" class="btn btn-primary">
+                        <span>Solicitar cotação</span>
+                        <svg class="icon" aria-hidden="true"><use href="icons.svg#icon-arrow-right"></use></svg>
+                    </a>
+                    <a href="#marcas" class="btn btn-secondary">
+                        <span>Ver Marcas</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -90,8 +96,8 @@
     <section id="sobre" class="sobre-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Uma Empresa de Distribuição<br>Com Tradição e Inovação</h2>
-                <p class="section-subtitle">Combinando experiência do mercado com tecnologia moderna</p>
+                <h2 class="section-title">Distribuição com tradição<br>no setor hoteleiro</h2>
+                <p class="section-subtitle">Experiência de mercado e rede de parceiros em todo o país</p>
             </div>
             
             <div class="sobre-content">
@@ -99,45 +105,37 @@
                     <div class="sobre-about">
                         <h3>Nossa História</h3>
                         <p>
-                            A JK Distribuidora nasceu com o compromisso de ser referência em distribuição 
-                            de produtos de alta qualidade. Com anos de experiência no mercado, construímos 
-                            uma sólida rede de parcerias com os principais estabelecimentos do país.
-                        </p>
-                        <p>
-                            Nossa missão é conectar as melhores marcas aos nossos clientes, oferecendo 
-                            soluções completas que agregam valor aos seus negócios.
+                            A JK Distribuidora conecta marcas premium a hotéis, restaurantes e operações
+                            de food service, com logística ágil, curadoria de produtos e relacionamento
+                            de longo prazo com cada parceiro.
                         </p>
                     </div>
                 </div>
                 
                 <div class="sobre-stats animate-on-scroll">
                     <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-building"></i>
+                        <div class="stat-icon" aria-hidden="true">
+                            <svg class="icon" aria-hidden="true"><use href="icons.svg#icon-building"></use></svg>
                         </div>
-                        <div class="stat-number" data-target="100">100+</div>
+                        <div class="stat-number" aria-hidden="true">100+</div>
                         <div class="stat-label">Parceiros Atendidos</div>
+                        <span class="sr-only">Mais de 100 parceiros atendidos</span>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-shipping-fast"></i>
+                        <div class="stat-icon" aria-hidden="true">
+                            <svg class="icon" aria-hidden="true"><use href="icons.svg#icon-shipping-fast"></use></svg>
                         </div>
-                        <div class="stat-number" data-target="15">15+</div>
+                        <div class="stat-number" aria-hidden="true">15+</div>
                         <div class="stat-label">Anos de Experiência</div>
+                        <span class="sr-only">Mais de 15 anos de experiência</span>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-star"></i>
+                        <div class="stat-icon" aria-hidden="true">
+                            <svg class="icon" aria-hidden="true"><use href="icons.svg#icon-star"></use></svg>
                         </div>
-                        <div class="stat-number" data-target="2">2</div>
-                        <div class="stat-label">Linhas de Produtos</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <i class="fas fa-thumbs-up"></i>
-                        </div>
-                        <div class="stat-number" data-target="98">98%</div>
-                        <div class="stat-label">Satisfação do Cliente</div>
+                        <div class="stat-number" aria-hidden="true">2</div>
+                        <div class="stat-label">Marcas Premium</div>
+                        <span class="sr-only">2 marcas premium representadas</span>
                     </div>
                 </div>
             </div>
@@ -145,21 +143,21 @@
             <div class="valores-grid">
                 <div class="valor-card">
                     <div class="valor-icon">
-                        <i class="fas fa-bullseye"></i>
+                        <svg class="icon" aria-hidden="true"><use href="icons.svg#icon-bullseye"></use></svg>
                     </div>
                     <h3>Missão</h3>
                     <p>Fornecer produtos de excelência com agilidade, garantindo a satisfação de nossos clientes</p>
                 </div>
                 <div class="valor-card">
                     <div class="valor-icon">
-                        <i class="fas fa-eye"></i>
+                        <svg class="icon" aria-hidden="true"><use href="icons.svg#icon-eye"></use></svg>
                     </div>
                     <h3>Visão</h3>
                     <p>Ser referência nacional em distribuição de produtos premium para o mercado hoteleiro</p>
                 </div>
                 <div class="valor-card">
                     <div class="valor-icon">
-                        <i class="fas fa-heart"></i>
+                        <svg class="icon" aria-hidden="true"><use href="icons.svg#icon-heart"></use></svg>
                     </div>
                     <h3>Valores</h3>
                     <p>Compromisso, qualidade, inovação e relacionamento duradouro com nossos parceiros</p>
@@ -169,46 +167,41 @@
     </section>
 
     <!-- Segmentos Section -->
-    <section id="segmentos" class="segmentos-section">
+    <section id="marcas" class="segmentos-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Produtos Selecionados<br>para o Seu Negócio</h2>
-                <p class="section-subtitle">Representamos as melhores marcas do mercado</p>
+                <h2 class="section-title">Marcas que representamos</h2>
+                <p class="section-subtitle">Tutty Sucos e Café Igarapé para hotelaria e food service</p>
             </div>
             
             <div class="segmentos-grid">
-                <div class="segmento-card animate-on-scroll">
+                <div class="segmento-card">
                     <div class="segmento-icon">
                         <img src="imagem_2025-09-27_003453435-Photoroom.png" alt="Tutty Sucos">
                     </div>
                     <h3>Tutty Sucos</h3>
-                    <p>Sucos naturais de frutas, produzidos com os mais altos padrões de qualidade</p>
-                    <div class="segmento-features">
-                        <span><i class="fas fa-check"></i> 100% Natural</span>
-                        <span><i class="fas fa-check"></i> Variedade de Sabores</span>
-                        <span><i class="fas fa-check"></i> Qualidade Premium</span>
-                    </div>
+                    <p>Sucos naturais para operações que exigem padrão e constância de fornecimento.</p>
                     <a href="TuttySucos.html" class="segmento-link">
-                        Saiba Mais <i class="fas fa-arrow-right"></i>
+                        Conhecer Tutty <svg class="icon" aria-hidden="true"><use href="icons.svg#icon-arrow-right"></use></svg>
                     </a>
                 </div>
                 
-                <div class="segmento-card animate-on-scroll">
+                <div class="segmento-card">
                     <div class="segmento-icon cafe-icon">
                         <img src="Igarape/logo.png" alt="Café Igarapé">
                     </div>
                     <h3>Café Igarapé</h3>
-                    <p>Café especial selecionado, torrado com perfeição para o paladar exigente</p>
-                    <div class="segmento-features">
-                        <span><i class="fas fa-check"></i> Torra Perfeita</span>
-                        <span><i class="fas fa-check"></i> Aroma Intenso</span>
-                        <span><i class="fas fa-check"></i> Origem Selecionada</span>
-                    </div>
+                    <p>Café especial de Minas Gerais para hotéis e restaurantes de alto padrão.</p>
                     <a href="IgarapeCafe.html" class="segmento-link">
-                        Saiba Mais <i class="fas fa-arrow-right"></i>
+                        Conhecer Igarapé <svg class="icon" aria-hidden="true"><use href="icons.svg#icon-arrow-right"></use></svg>
                     </a>
                 </div>
             </div>
+
+            <p class="marcas-aside">
+                Quer representar sua marca com a JK?
+                <a href="#contato">Fale com o time comercial</a>.
+            </p>
         </div>
     </section>
 
@@ -216,272 +209,167 @@
     <section id="diferenciais" class="diferenciais-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Diferenciais que<br>Fazem a Diferença</h2>
+                <h2 class="section-title">Por que escolher a JK</h2>
             </div>
             
             <div class="diferenciais-grid">
                 <div class="diferencial-card">
                     <div class="diferencial-icon">
-                        <i class="fas fa-shipping-fast"></i>
+                        <svg class="icon" aria-hidden="true"><use href="icons.svg#icon-shipping-fast"></use></svg>
                     </div>
-                    <h3>Logística Eficiente</h3>
-                    <p>Entregas rápidas e pontuais, garantindo disponibilidade contínua dos produtos</p>
+                    <h3>Logística eficiente</h3>
+                    <p>Entregas pontuais e disponibilidade contínua para sua operação.</p>
                 </div>
                 
                 <div class="diferencial-card">
                     <div class="diferencial-icon">
-                        <i class="fas fa-headset"></i>
+                        <svg class="icon" aria-hidden="true"><use href="icons.svg#icon-headset"></use></svg>
                     </div>
-                    <h3>Atendimento Personalizado</h3>
-                    <p>Equipe dedicada para oferecer suporte e soluções customizadas ao seu negócio</p>
+                    <h3>Atendimento dedicado</h3>
+                    <p>Equipe comercial próxima, com suporte para cotações e pedidos.</p>
                 </div>
                 
                 <div class="diferencial-card">
                     <div class="diferencial-icon">
-                        <i class="fas fa-award"></i>
+                        <svg class="icon" aria-hidden="true"><use href="icons.svg#icon-award"></use></svg>
                     </div>
-                    <h3>Qualidade Garantida</h3>
-                    <p>Rigoroso controle de qualidade em todos os produtos que distribuímos</p>
-        </div>
-        
+                    <h3>Curadoria de marcas</h3>
+                    <p>Produtos selecionados para padrões exigentes de hotelaria e food service.</p>
+                </div>
+                
                 <div class="diferencial-card">
                     <div class="diferencial-icon">
-                        <i class="fas fa-handshake"></i>
+                        <svg class="icon" aria-hidden="true"><use href="icons.svg#icon-handshake"></use></svg>
                     </div>
-                    <h3>Parcerias Estratégicas</h3>
-                    <p>Relacionamento duradouro com os principais players do mercado hoteleiro</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Nosso Compromisso Section -->
-    <section class="foco-section">
-        <div class="container">
-            <div class="foco-content">
-                <div class="foco-text">
-                    <h2 class="foco-title">Qualidade que<br>Transforma Negócios</h2>
-                    <p>
-                        Compreendemos que cada negócio é único e merece atenção especial. Por isso, 
-                        selecionamos cuidadosamente cada produto, garantindo excelência em cada 
-                        entrega e um suporte personalizado para o seu crescimento.
-                    </p>
-                    <p>
-                        Seja qual for o segmento, oferecemos soluções completas que agregam valor 
-                        e impulsionam os resultados dos nossos parceiros.
-                    </p>
-                    <a href="#contato" class="foco-link">
-                        Fale Conosco <i class="fas fa-arrow-right"></i>
-                    </a>
-        </div>
-                <div class="foco-visual animate-on-scroll">
-                    <div class="foco-card">
-                        <i class="fas fa-certificate"></i>
-                        <h4>Qualidade Certificada</h4>
-                    </div>
-                    <div class="foco-card">
-                        <i class="fas fa-shipping-fast"></i>
-                        <h4>Entrega Rápida</h4>
-                    </div>
-                    <div class="foco-card">
-                        <i class="fas fa-headset"></i>
-                        <h4>Suporte Dedicado</h4>
-                    </div>
-                    <div class="foco-card">
-                        <i class="fas fa-handshake"></i>
-                        <h4>Parceria de Longo Prazo</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Representação de Marcas Section -->
-    <section class="representacao-section">
-    <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Representamos Marcas<br>que Fazem a Diferença</h2>
-                <p class="section-subtitle">Trabalhamos com produtos de qualidade para surpreender você</p>
-        </div>
-        
-            <div class="representacao-content">
-                <div class="representacao-text animate-on-scroll">
-                    <p>
-                        Somos representantes de marcas especiais, escolhidas a dedo para oferecer o melhor 
-                        para nossos clientes. Nosso trabalho é conectar você aos produtos certos, facilitando 
-                        seu acesso à qualidade e excelência.
-                    </p>
-                    <p>
-                        Para as marcas que representamos, oferecemos toda nossa rede de parceiros e experiência, 
-                        ajudando a levar seus produtos aos lugares certos. E para você, garantimos confiança, 
-                        praticidade e ótimos resultados.
-                    </p>
-                </div>
-
-                <div class="marcas-representadas animate-on-scroll">
-                    <h3>Marcas que Representamos</h3>
-                    <div class="marcas-logos">
-                        <div class="marca-logo-item">
-                            <img src="imagem_2025-09-27_003453435-Photoroom.png" alt="Tutty Sucos">
-                            <p>Tutty Sucos</p>
-                        </div>
-                        <div class="marca-logo-item marca-logo-item-cafe">
-                            <img src="Igarape/logo.png" alt="Café Igarapé">
-                            <p>Café Igarapé</p>
-                        </div>
-                    </div>
-                    <div class="representacao-cta">
-                        <p>
-                            Se você tem interesse em ter sua marca representada por uma distribuidora experiente 
-                            e com uma sólida rede de parceiros, entre em contato conosco. Oferecemos toda nossa 
-                            expertise e network para levar seus produtos aos melhores estabelecimentos do mercado.
-                        </p>
-                        <a href="#contato" class="representacao-link">
-                            Fale Conosco <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
+                    <h3>Parceria de longo prazo</h3>
+                    <p>Relacionamento estável com os principais estabelecimentos da região.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Parceiros Section -->
-    <section id="parceiros" class="parceiros-section">
+    <section id="parceiros" class="parceiros-section" aria-labelledby="parceiros-title">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Parceiros que Confiam<br>na Nossa Qualidade</h2>
-                <p class="section-subtitle">Grandes marcas do setor hoteleiro</p>
-        </div>
+                <h2 id="parceiros-title" class="section-title">Parceiros que confiam na JK</h2>
+                <p class="section-subtitle">Hotéis e pousadas atendidos em todo o país</p>
+            </div>
             
             <div class="carrossel-container">
+                <p class="sr-only">Carrossel com logotipos de hotéis e pousadas parceiros.</p>
                 <div class="carrossel-track">
                     <!-- Duplicando os logos para criar loop infinito -->
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/Grupo B.png" alt="Grupo BZ" class="logo-img">
+                        <img src="LogosHoteis/Grupo B.png" alt="Grupo BZ" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/ferradurahotel_resort_logomarca.png" alt="Resort Ferradura" class="logo-img">
+                        <img src="LogosHoteis/ferradurahotel_resort_logomarca.png" alt="Resort Ferradura" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/Ferradura.png" alt="Ferradura" class="logo-img">
+                        <img src="LogosHoteis/Ferradura.png" alt="Ferradura" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/Hotel_Coronado.png" alt="Hotel Coronado" class="logo-img">
+                        <img src="LogosHoteis/Hotel_Coronado.png" alt="Hotel Coronado" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/Aguas Claras.png" alt="Pousada Águas Claras" class="logo-img">
+                        <img src="LogosHoteis/Aguas Claras.png" alt="Pousada Águas Claras" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/mERIDIANAS.webp" alt="Grupo Meridianas Hotéis" class="logo-img">
+                        <img src="LogosHoteis/mERIDIANAS.webp" alt="Grupo Meridianas Hotéis" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/Gravatas pousada.png" alt="Pousada Gravaras" class="logo-img">
+                        <img src="LogosHoteis/Gravatas pousada.png" alt="Pousada Gravaras" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/CafeMar.png" alt="Pousada Café e Mar" class="logo-img">
+                        <img src="LogosHoteis/CafeMar.png" alt="Pousada Café e Mar" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/kastel.jpeg" alt="Grupo Kastel" class="logo-img">
+                        <img src="LogosHoteis/kastel.jpeg" alt="Grupo Kastel" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/grupovilarejo.jpg" alt="Grupo Villarejo Hotéis" class="logo-img">
+                        <img src="LogosHoteis/grupovilarejo.jpg" alt="Grupo Villarejo Hotéis" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/macae-mercure.jpg" alt="Hotel Mercure Macaé" class="logo-img">
+                        <img src="LogosHoteis/macae-mercure.jpg" alt="Hotel Mercure Macaé" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/brisa tropical.png" alt="Hotel Brisa Tropical" class="logo-img">
+                        <img src="LogosHoteis/brisa tropical.png" alt="Hotel Brisa Tropical" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/brisa da costa.jfif" alt="Hotel Brisa da Costa" class="logo-img">
+                        <img src="LogosHoteis/brisa da costa.jfif" alt="Hotel Brisa da Costa" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/vhome-nova-logo-1-300x155.png" alt="Hotel V Houme" class="logo-img">
+                        <img src="LogosHoteis/vhome-nova-logo-1-300x155.png" alt="Hotel V Houme" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/samba.png" alt="Grupo Samba Hotéis" class="logo-img">
+                        <img src="LogosHoteis/samba.png" alt="Grupo Samba Hotéis" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/ondas do forte.jfif" alt="Hotel Ondas do Forte" class="logo-img">
+                        <img src="LogosHoteis/ondas do forte.jfif" alt="Hotel Ondas do Forte" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/marlen.jfif" alt="Hotel Marlen" class="logo-img">
+                        <img src="LogosHoteis/marlen.jfif" alt="Hotel Marlen" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/pousada maria.png" alt="Pousada Maria" class="logo-img">
+                        <img src="LogosHoteis/pousada maria.png" alt="Pousada Maria" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/albatroz.png" alt="Pousada Albatroz" class="logo-img">
+                        <img src="LogosHoteis/albatroz.png" alt="Pousada Albatroz" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/ATLANTICO-LOGO.webp" alt="Hotel Atlântico" class="logo-img">
+                        <img src="LogosHoteis/ATLANTICO-LOGO.webp" alt="Hotel Atlântico" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/portopraia.png" alt="Grupo Porto Praia" class="logo-img">
+                        <img src="LogosHoteis/portopraia.png" alt="Grupo Porto Praia" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/canto da baleia.jfif" alt="Hotel Canto da Baleia" class="logo-img">
+                        <img src="LogosHoteis/canto da baleia.jfif" alt="Hotel Canto da Baleia" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/logo-solar-p6onqaowq7qcu6857cdbejh3anexj5ipm2u4r1ab5u.png" alt="Pousada Solar da Praia" class="logo-img">
+                        <img src="LogosHoteis/logo-solar-p6onqaowq7qcu6857cdbejh3anexj5ipm2u4r1ab5u.png" alt="Pousada Solar da Praia" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/st robert.jfif" alt="Hotel Fazenda St Robert" class="logo-img">
+                        <img src="LogosHoteis/st robert.jfif" alt="Hotel Fazenda St Robert" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/seleto.jfif" alt="Hotel Seleto" class="logo-img">
+                        <img src="LogosHoteis/seleto.jfif" alt="Hotel Seleto" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/ribeirao.jfif" alt="Hotel Fazenda Ribeirão" class="logo-img">
+                        <img src="LogosHoteis/ribeirao.jfif" alt="Hotel Fazenda Ribeirão" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/caluje.png" alt="Hotel Fazenda Caluje" class="logo-img">
+                        <img src="LogosHoteis/caluje.png" alt="Hotel Fazenda Caluje" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/santissimo.jfif" alt="Hotel Fazenda Santíssimo MG" class="logo-img">
+                        <img src="LogosHoteis/santissimo.jfif" alt="Hotel Fazenda Santíssimo MG" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/papai noel.jfif" alt="Hotel Papai Noel" class="logo-img">
+                        <img src="LogosHoteis/papai noel.jfif" alt="Hotel Papai Noel" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/Titanic-Logo2.png" alt="Hotel Titanic" class="logo-img">
+                        <img src="LogosHoteis/Titanic-Logo2.png" alt="Hotel Titanic" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/suarez.png" alt="Pousada Suarez" class="logo-img">
+                        <img src="LogosHoteis/suarez.png" alt="Pousada Suarez" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/finlandia.png" alt="Hotel Filandia" class="logo-img">
+                        <img src="LogosHoteis/finlandia.png" alt="Hotel Filandia" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/vila francesa.jfif" alt="Hotel Vila Francesa" class="logo-img">
+                        <img src="LogosHoteis/vila francesa.jfif" alt="Hotel Vila Francesa" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/santa fe.png" alt="Pousada Santa Fé" class="logo-img">
+                        <img src="LogosHoteis/santa fe.png" alt="Pousada Santa Fé" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/fazendinha.jfif" alt="Hotel Fazendinha" class="logo-img">
+                        <img src="LogosHoteis/fazendinha.jfif" alt="Hotel Fazendinha" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/vila rica.png" alt="Hotel Vila Rica" class="logo-img">
+                        <img src="LogosHoteis/vila rica.png" alt="Hotel Vila Rica" class="logo-img" loading="lazy" decoding="async">
                     </div>
                     <div class="parceiro-logo">
-                        <img src="LogosHoteis/cegil.png" alt="Hotel Cegil" class="logo-img">
-                    </div>
-                    <!-- Duplicação para loop infinito -->
-                    <div class="parceiro-logo">
-                        <img src="LogosHoteis/Grupo B.png" alt="Grupo BZ" class="logo-img">
-                    </div>
-                    <div class="parceiro-logo">
-                        <img src="LogosHoteis/ferradurahotel_resort_logomarca.png" alt="Resort Ferradura" class="logo-img">
-                    </div>
-                    <div class="parceiro-logo">
-                        <img src="LogosHoteis/Ferradura.png" alt="Ferradura" class="logo-img">
-                    </div>
-                    <div class="parceiro-logo">
-                        <img src="LogosHoteis/Hotel_Coronado.png" alt="Hotel Coronado" class="logo-img">
-                    </div>
-                    <div class="parceiro-logo">
-                        <img src="LogosHoteis/Aguas Claras.png" alt="Pousada Águas Claras" class="logo-img">
+                        <img src="LogosHoteis/cegil.png" alt="Hotel Cegil" class="logo-img" loading="lazy" decoding="async">
                     </div>
                 </div>
             </div>
@@ -492,50 +380,80 @@
     <section id="contato" class="contato-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Entre em Contato</h2>
+                <h2 class="section-title">Fale com o time comercial</h2>
+                <p class="section-subtitle">Cotações, pedidos e parcerias. Cada assunto tem um contato dedicado.</p>
             </div>
             
             <div class="contato-content">
                 <div class="contato-info animate-on-scroll">
                     <div class="contato-item">
-                        <h3>TELEFONE</h3>
-                        <p>(24) 98880-5041 - Alcir Canuto (Representante)</p>
-                        <p>(24) 98866-1692 - Kleber Giroto (Diretor Comercial)</p>
+                        <h3>Telefone</h3>
+                        <p>
+                            <a href="tel:+5524988805041">(24) 98880-5041</a>
+                            · Alcir Canuto, representante (cotações e pedidos)
+                        </p>
+                        <p>
+                            <a href="tel:+5524988661692">(24) 98866-1692</a>
+                            · Kleber Giroto, diretor comercial (parcerias)
+                        </p>
                     </div>
                     <div class="contato-item">
-                        <h3>EMAIL</h3>
-                        <p>alcirsouza5094@gmail.com - Alcir (Representante)</p>
-                        <p>klebergcs@gmail.com - Kleber (Diretor Comercial)</p>
+                        <h3>E-mail</h3>
+                        <p>
+                            <a href="mailto:alcirsouza5094@gmail.com">alcirsouza5094@gmail.com</a>
+                            · Alcir (cotações e pedidos)
+                        </p>
+                        <p>
+                            <a href="mailto:klebergcs@gmail.com">klebergcs@gmail.com</a>
+                            · Kleber (parcerias comerciais)
+                        </p>
                     </div>
                     <div class="contato-item">
-                        <h3>HORÁRIO DE FUNCIONAMENTO</h3>
-                        <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
+                        <h3>Horário de atendimento</h3>
+                        <p>Segunda a sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
                     </div>
                 </div>
 
                 <!-- Formulário de Contato -->
                 <div class="contato-form animate-on-scroll">
-                    <h3>ENVIE SUA MENSAGEM</h3>
-                    <form id="whatsapp-form">
-                        <div class="form-group">
-                            <input type="text" id="nome" placeholder="Seu nome completo" required>
+                    <h3>Iniciar conversa no WhatsApp</h3>
+                    <form id="whatsapp-form" novalidate>
+                        <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+                        <div class="form-group" id="form-group-nome">
+                            <label for="nome" class="form-label">Seu nome completo</label>
+                            <input
+                                type="text"
+                                id="nome"
+                                name="nome"
+                                autocomplete="name"
+                                maxlength="100"
+                                placeholder="Ex.: Maria Silva"
+                                required
+                                aria-describedby="nome-hint nome-error"
+                            >
+                            <span id="nome-hint" class="form-hint">Usado para personalizar a mensagem no WhatsApp.</span>
+                            <span id="nome-error" class="form-error" role="alert"></span>
                         </div>
-                        <div class="form-group">
-                            <select title="Tipo de mensagem" id="mensagem-tipo" required>
-                                <option value="">Escolha o tipo de mensagem</option>
-                                <option value="cotacao">Olá, gostaria de solicitar uma cotação</option>
-                                <option value="duvidas">Olá, tenho dúvidas sobre os produtos</option>
-                                <option value="parceria">Olá, gostaria de falar sobre parceria comercial</option>
-                                <option value="pedido">Olá, gostaria de fazer um pedido</option>
-                                <option value="informacoes">Olá, gostaria de mais informações sobre os produtos</option>
+                        <div class="form-group" id="form-group-mensagem-tipo">
+                            <label for="mensagem-tipo" class="form-label">Como podemos ajudar?</label>
+                            <select id="mensagem-tipo" name="mensagem-tipo" required aria-describedby="mensagem-tipo-hint mensagem-tipo-error">
+                                <option value="">Selecione o assunto</option>
+                                <option value="cotacao" data-contact="alcir" data-message="Olá, gostaria de solicitar uma cotação.">Solicitar cotação</option>
+                                <option value="pedido" data-contact="alcir" data-message="Olá, gostaria de fazer um pedido.">Fazer pedido</option>
+                                <option value="duvidas" data-contact="alcir" data-message="Olá, tenho dúvidas sobre os produtos.">Dúvidas sobre produtos</option>
+                                <option value="informacoes" data-contact="alcir" data-message="Olá, gostaria de mais informações sobre os produtos.">Mais informações</option>
+                                <option value="parceria" data-contact="kleber" data-message="Olá, gostaria de falar sobre parceria comercial.">Parceria comercial</option>
                             </select>
+                            <span id="mensagem-tipo-hint" class="form-hint">Cotações e pedidos vão para Alcir; parcerias comerciais, para Kleber.</span>
+                            <span id="mensagem-tipo-error" class="form-error" role="alert"></span>
                         </div>
-                        <button type="submit" class="btn btn-primary">ENVIAR VIA WHATSAPP</button>
+                        <button type="submit" class="btn btn-primary" id="whatsapp-submit">Abrir conversa no WhatsApp</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -545,11 +463,11 @@
                     <div class="footer-logo">
                         <img src="logoJK/j (4).png" alt="JK Distribuidora">
                     </div>
-                    <p>Distribuição e qualidade em produtos premium para hotelaria e food service.</p>
+                    <p>Distribuidora B2B de Tutty Sucos e Café Igarapé para hotelaria e food service.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="https://wa.me/5524988805041" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <span class="social-link--unavailable" aria-label="Instagram (em breve)"><svg class="icon icon--brand" aria-hidden="true"><use href="icons.svg#icon-instagram"></use></svg></span>
+                        <span class="social-link--unavailable" aria-label="Facebook (em breve)"><svg class="icon icon--brand" aria-hidden="true"><use href="icons.svg#icon-facebook"></use></svg></span>
+                        <a href="#contato" aria-label="Iniciar conversa no WhatsApp"><svg class="icon icon--brand" aria-hidden="true"><use href="icons.svg#icon-whatsapp"></use></svg></a>
                     </div>
                 </div>
                 
@@ -557,7 +475,7 @@
                     <h4>Links Rápidos</h4>
                     <ul>
                         <li><a href="#sobre">Sobre</a></li>
-                        <li><a href="#segmentos">Segmentos</a></li>
+                        <li><a href="#marcas">Marcas</a></li>
                         <li><a href="#diferenciais">Diferenciais</a></li>
                         <li><a href="#parceiros">Parceiros</a></li>
                         <li><a href="#contato">Contato</a></li>
@@ -575,30 +493,33 @@
                 <div class="footer-section">
                     <h4>Contato</h4>
                     <ul>
-                        <li><i class="fas fa-phone" aria-hidden="true"></i> (24) 98880-5041 - Alcir</li>
-                        <li><i class="fas fa-phone" aria-hidden="true"></i> (24) 98866-1692 - Kleber</li>
-                        <li><i class="fas fa-envelope" aria-hidden="true"></i> alcirsouza5094@gmail.com</li>
-                        <li><i class="fas fa-envelope" aria-hidden="true"></i> klebergcs@gmail.com</li>
+                        <li>
+                            <svg class="icon" aria-hidden="true"><use href="icons.svg#icon-phone"></use></svg>
+                            <a href="tel:+5524988805041">(24) 98880-5041</a> · Alcir
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true"><use href="icons.svg#icon-phone"></use></svg>
+                            <a href="tel:+5524988661692">(24) 98866-1692</a> · Kleber
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true"><use href="icons.svg#icon-envelope"></use></svg>
+                            <a href="mailto:alcirsouza5094@gmail.com">alcirsouza5094@gmail.com</a>
+                        </li>
+                        <li>
+                            <svg class="icon" aria-hidden="true"><use href="icons.svg#icon-envelope"></use></svg>
+                            <a href="mailto:klebergcs@gmail.com">klebergcs@gmail.com</a>
+                        </li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 JK Distribuidora. Todos os direitos reservados.</p>
+                <p>&copy; 2026 JK Distribuidora. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
-    <script type="importmap">
-    {
-        "imports": {
-            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
-        }
-    }
-    </script>
-    <script src="index.js"></script>
-    <script src="modelo3d.js" type="module"></script>
+    <script src="index.js" defer></script>
 </body>
 </html>
